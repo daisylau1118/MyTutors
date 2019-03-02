@@ -33,11 +33,41 @@
                 android:inputType="textEmailAddress"
                 android:text="Email"/>
 
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="14"
+                android:layout_marginBottom="50dp"
+                android:inputType="textPersonName"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="14"
+                android:layout_marginBottom="50dp"
+                android:inputType="textPersonName"
+                android:text="Retype Password" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft=""
+                android:text="Next" />
+
+
 
 
 
         </LinearLayout>
 
-    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
 
 
