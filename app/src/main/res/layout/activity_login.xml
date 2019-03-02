@@ -1,21 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/White">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
 
-        <ImageView
-            android:id="@+id/img_Logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
+            <ImageView
+                android:id="@+id/img_Logo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="40dp"
+                tools:srcCompat="@mipmap/Logo" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Username" />
 
-</RelativeLayout>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:text="Password" />
+
+            <Button
+                android:id="@+id/forgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#00000000"
+                android:text="Forgot Password?"
+                android:textSize="12sp"
+                android:textColor="@color/NavyBlue"
+                android:textIsSelectable="true"/>
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/NavyBlue"
+                android:text="Login"
+                android:textColor="@color/White" />
+
+        </LinearLayout>
+    </RelativeLayout>
