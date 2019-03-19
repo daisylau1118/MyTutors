@@ -8,7 +8,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="80dp"
+        android:gravity="center|top"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -24,24 +28,35 @@
 
                 <ImageView
                     android:id="@+id/profilePicture"
-                    android:layout_width="150dp"
-                    android:layout_height="135dp"
-                    tools:layout_editor_absoluteX="30dp"
-                    tools:layout_editor_absoluteY="184dp"
-                    tools:srcCompat="@mipmap/logo" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    tools:srcCompat="@tools:sample/avatars[4]" />
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emma Jones"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/Black"
+                    android:textSize="33sp"
+                    android:layout_toRightOf="@id/profilePicture"
+                    android:layout_marginLeft="15dp"
+                    />
 
                 <TextView
                     android:id="@+id/status"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/goToChat"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/profileName"
+                    android:layout_marginLeft="15dp"
+
                     android:layout_toRightOf="@id/profilePicture"
                     android:gravity="center"
                     android:textSize="20dp"
                     android:text="Tutor"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
+
                     tools:layout_editor_absoluteX="144dp"
                     tools:layout_editor_absoluteY="248dp" />
 
@@ -50,37 +65,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/status"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="-20dp"
+                    android:layout_marginTop="-5dp"
+
                     android:layout_toRightOf="@id/profilePicture"
                     android:isIndicator="true"
                     android:numStars="5"
                     android:rating="4"
-                    android:scaleX="0.9"
-                    android:scaleY="0.9" />
+                    android:scaleX="0.7"
+                    android:scaleY="0.7" />
 
                 <ImageButton
                     android:id="@+id/goToChat"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="49dp"
-                    android:layout_toRightOf="@id/profilePicture"
-                    android:backgroundTint="@color/White"
-                    android:text="Button"
-                    tools:layout_editor_absoluteX="133dp"
-                    tools:layout_editor_absoluteY="184dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_toRightOf="@id/status"
+                    android:layout_below="@id/profileName"
+                    android:background=""
                     tools:src="@drawable/chatIcon" />
 
                 <ImageButton
                     android:id="@+id/goToCalender"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="51dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_toRightOf="@id/goToChat"
-                    android:backgroundTint="@color/White"
-                    android:text="Button"
-                    tools:layout_editor_absoluteX="271dp"
-                    tools:layout_editor_absoluteY="184dp"
+                    android:layout_below="@id/profileName"
+                    android:background=""
                     tools:src="@drawable/calenderIcon" />
 
 
@@ -91,14 +105,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginTop="15dp"
                 android:layout_below="@id/basicProfileIconsLayout"
-                tools:layout_editor_absoluteX="193dp">
+                >
 
                 <TextView
                     android:id="@+id/bioTextBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bio: I can tutor students needing help in grade 7-10 math. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                    android:text="I can tutor students needing help in grade 7-10 math. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                     android:textSize="20dp"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="155dp" />
@@ -109,8 +124,11 @@
                 android:id="@+id/reviewRatingButtonLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/bioLayout">
+                android:layout_below="@id/bioLayout"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-20dp"
 
+                >
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -129,63 +147,89 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginLeft="300dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/White"
+                        android:layout_marginTop="5dp"
+                        android:background=""
                         app:srcCompat="@android:drawable/btn_star_big_on" />
                 </RelativeLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/reviewButton"
                 android:layout_marginVertical="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/reviewRatingButtonLayout"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp">
+                android:paddingBottom="20dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="10dp"
+                android:background="@color/Grey"
+                >
 
                 <ImageView
                     android:id="@+id/studentProfilePicture"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    tools:layout_editor_absoluteX="30dp"
-                    tools:layout_editor_absoluteY="184dp"
-                    tools:srcCompat="@mipmap/logo" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+
+                    android:scaleX=".8"
+                    android:scaleY=".8"
+                    tools:srcCompat="@tools:sample/avatars[2]" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/showRating"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="5dp"
                     android:layout_toRightOf="@+id/studentProfilePicture"
-                    android:gravity="center"
+                    android:layout_marginTop="-4dp"
                     android:text="She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she's patient when I do not understand the information."
                     android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textAlignment="textStart"
                     android:textSize="16dp"
                     tools:layout_editor_absoluteX="144dp"
                     tools:layout_editor_absoluteY="248dp" />
+
+                <TextView
+                    android:id="@+id/studentRatingName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_toRightOf="@id/studentProfilePicture"
+                    android:text="Sarah Miller"
+                    android:textSize="24sp" />
 
                 <RatingBar
                     android:id="@+id/showRating"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="-50dp"
+                    android:layout_marginTop="-12dp"
+                    android:layout_below="@id/studentRatingName"
                     android:layout_toRightOf="@+id/studentProfilePicture"
-                    android:gravity="center"
                     android:isIndicator="true"
                     android:numStars="5"
                     android:rating="5"
-                    android:scaleX="0.5"
+                    android:scaleX="0.6"
                     android:scaleY="0.6" />
 
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reviewButton"
+                android:layout_marginTop="-18dp"
+                android:layout_marginLeft="215dp"
+                android:text="See more ..."
+                android:textSize="25sp" />
+
         </RelativeLayout>
 
     </LinearLayout>
+
+
 
 
 </android.support.constraint.ConstraintLayout>
