@@ -113,7 +113,7 @@
                     android:id="@+id/bioTextBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="I can tutor students needing help in grade 7-10 math. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                    android:text="I can tutor students needing help in grade 7-10 math. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                     android:textSize="20dp"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="155dp" />
@@ -145,11 +145,13 @@
                         android:id="@+id/ratingButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="300dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@id/reviewText"
+                        android:layout_marginLeft="200dp"
+                        android:layout_marginTop="10dp"
                         android:background=""
-                        app:srcCompat="@android:drawable/btn_star_big_on" />
+                        android:scaleY="1.5"
+                        android:scaleX="1.5"
+                        app:srcCompat="@drawable/star" />
                 </RelativeLayout>
 
             </RelativeLayout>
