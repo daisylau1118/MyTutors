@@ -4,7 +4,12 @@
     <color name="LightBlue">#7593A2</color>
     <color name="Red">#BC403C</color>
     <color name="Grey">#EDF3F7</color>
+<<<<<<< HEAD
     <color name="DarkGrey">#979797</color>
     <color name="White">#FFFFFF</color>
+=======
+>>>>>>> schedule
     <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="deletelater">#FAFAFA</color>
 </resources>
