@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="30dp"
         android:gravity="center|top"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp">
@@ -30,7 +30,6 @@
                     android:id="@+id/profilePicture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     tools:srcCompat="@tools:sample/avatars[4]" />
 
                 <TextView
@@ -54,11 +53,9 @@
 
                     android:layout_toRightOf="@id/profilePicture"
                     android:gravity="center"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:text="Tutor"
-
-                    tools:layout_editor_absoluteX="144dp"
-                    tools:layout_editor_absoluteY="248dp" />
+                    />
 
                 <RatingBar
                     android:id="@+id/ratingOfProfile"
@@ -83,8 +80,8 @@
                     android:layout_marginTop="-10dp"
                     android:layout_toRightOf="@id/status"
                     android:layout_below="@id/profileName"
-                    android:background=""
-                    tools:src="@drawable/chatIcon" />
+                    android:background="@color/Transparent"
+                    app:srcCompat="@drawable/chaticon" />
 
                 <ImageButton
                     android:id="@+id/goToCalender"
@@ -94,8 +91,8 @@
                     android:layout_marginTop="-10dp"
                     android:layout_toRightOf="@id/goToChat"
                     android:layout_below="@id/profileName"
-                    android:background=""
-                    tools:src="@drawable/calenderIcon" />
+                    android:background="@color/Transparent"
+                    app:srcCompat="@drawable/calendericon" />
 
 
             </RelativeLayout>
@@ -114,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="I can tutor students needing help in grade 7-10 math. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="155dp" />
 
@@ -139,7 +136,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Reviews:"
-                        android:textSize="30dp" />
+                        android:textSize="30sp" />
 
                     <ImageButton
                         android:id="@+id/ratingButton"
@@ -148,7 +145,7 @@
                         android:layout_toRightOf="@id/reviewText"
                         android:layout_marginLeft="200dp"
                         android:layout_marginTop="10dp"
-                        android:background=""
+                        android:background="@color/Transparent"
                         android:scaleY="1.5"
                         android:scaleX="1.5"
                         app:srcCompat="@drawable/star" />
@@ -184,14 +181,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/showRating"
-                    android:layout_toRightOf="@+id/studentProfilePicture"
                     android:layout_marginTop="-4dp"
+                    android:layout_toRightOf="@+id/studentProfilePicture"
                     android:text="She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she's patient when I do not understand the information."
-                    android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textAlignment="textStart"
-                    android:textSize="16dp"
-                    tools:layout_editor_absoluteX="144dp"
-                    tools:layout_editor_absoluteY="248dp" />
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/studentRatingName"
@@ -230,6 +225,8 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+
 
 
 

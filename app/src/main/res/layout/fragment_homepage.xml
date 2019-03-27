@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/Grey"
-    tools:context=".MainActivity">
-
+    android:backgroundTint="@color/White"
+    tools:context=".HomepageFragment">
 
     <EditText
         android:id="@+id/searchbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:paddingTop="60dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginBottom="40dp"
-        android:layout_marginLeft="90dp"
         android:ems="12"
+        android:hint="Search..."
+        android:textSize="20dp"
         android:inputType="textPersonName"
-        android:text="Search..."/>
+        android:paddingTop="30sp" />
 
     <ImageButton
         android:id="@+id/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleY="1.8"
-        android:scaleX="1.8"
+        android:scaleY="1.6"
+        android:scaleX="1.6"
         android:paddingLeft="30dp"
-        android:paddingTop="46dp"
-        android:background =""
+        android:paddingTop="26dp"
+        android:background ="@color/Transparent"
         app:srcCompat="@drawable/settings"
 
         />
 
-
-
     <ScrollView
+        android:layout_below="@id/searchbar"
         android:layout_width="wrap_content"
-        android:layout_marginTop="130dp"
+
         android:layout_marginLeft="35dp"
         android:layout_height="600dp"
         >
@@ -50,18 +47,34 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/profileCard"
                 android:layout_width="340dp"
                 android:layout_height="130dp"
                 android:background="@color/Grey"
                 >
+                <Button
+                    android:id="@+id/profileCardButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/Transparent"/>
+
                 <ImageView
                     android:id="@+id/profilePic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/tempprofilepic" />
 
+                <ImageView
+                    android:id="@+id/profilePicEx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:scaleX="0.65"
                     android:scaleY="0.65"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    />
+
                 <TextView
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
@@ -80,9 +93,9 @@
                     android:layout_toRightOf="@id/profilePic"
                     android:layout_below="@id/name"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="-1dp"
-                    android:textSize="15dp"
-                    tools:text="Tutor" />
+                    android:textSize="15sp"
+                    android:text="Tutor"
+                    />
                 <RatingBar
                     android:id="@+id/ratingBar1"
                     style="@style/Widget.AppCompat.RatingBar"
@@ -94,7 +107,7 @@
                     android:layout_marginLeft="-55dp"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="4"
+                    android:rating="4.5"
                     android:scaleX="0.5"
                     android:scaleY="0.5" />
             </RelativeLayout>
@@ -109,7 +122,13 @@
                     android:id="@+id/profilePic2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/tempprofilepic" />
+                <ImageView
+                    android:id="@+id/profilePic2Ex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:scaleX="0.65"
                     android:scaleY="0.65"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -131,9 +150,8 @@
                     android:layout_toRightOf="@id/profilePic2"
                     android:layout_below="@id/name2"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="-1dp"
-                    android:textSize="15dp"
-                    tools:text="Tutor" />
+                    android:textSize="15sp"
+                    android:text="Tutor" />
                 <RatingBar
                     android:id="@+id/ratingBar2"
                     style="@style/Widget.AppCompat.RatingBar"
@@ -145,7 +163,7 @@
                     android:layout_marginLeft="-55dp"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="4"
+                    android:rating="4.5"
                     android:scaleX="0.5"
                     android:scaleY="0.5" />
             </RelativeLayout>
@@ -160,6 +178,13 @@
                     android:id="@+id/profilePic3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/tempprofilepic" />
+                <ImageView
+                    android:id="@+id/profilePic3Ex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
                     android:scaleX="0.65"
                     android:scaleY="0.65"
@@ -171,7 +196,7 @@
                     android:layout_toRightOf="@id/profilePic3"
                     android:layout_marginTop="30dp"
 
-                    android:text="Emma Jones"
+                    android:text="Lisa Diaz"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="25sp" />
 
@@ -182,9 +207,8 @@
                     android:layout_toRightOf="@id/profilePic3"
                     android:layout_below="@id/name3"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="-1dp"
-                    android:textSize="15dp"
-                    tools:text="Tutor" />
+                    android:textSize="15sp"
+                    android:text="Tutor"/>
                 <RatingBar
                     android:id="@+id/ratingBar3"
                     style="@style/Widget.AppCompat.RatingBar"
@@ -196,7 +220,7 @@
                     android:layout_marginLeft="-55dp"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="4"
+                    android:rating="5"
                     android:scaleX="0.5"
                     android:scaleY="0.5" />
             </RelativeLayout>
@@ -211,6 +235,13 @@
                     android:id="@+id/profilePic4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/tempprofilepic" />
+                <ImageView
+                    android:id="@+id/profilePic4Ex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
                     android:scaleX="0.65"
                     android:scaleY="0.65"
@@ -222,7 +253,7 @@
                     android:layout_toRightOf="@id/profilePic4"
                     android:layout_marginTop="30dp"
 
-                    android:text="Emma Jones"
+                    android:text="Chloe Lin"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="25sp" />
 
@@ -233,9 +264,8 @@
                     android:layout_toRightOf="@id/profilePic4"
                     android:layout_below="@id/name4"
                     android:layout_marginTop="12dp"
-                    android:layout_marginLeft="-1dp"
-                    android:textSize="15dp"
-                    tools:text="Tutor" />
+                    android:textSize="15sp"
+                    android:text="Tutor" />
                 <RatingBar
                     android:id="@+id/ratingBar4"
                     style="@style/Widget.AppCompat.RatingBar"
@@ -247,7 +277,7 @@
                     android:layout_marginLeft="-55dp"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="4"
+                    android:rating="4.5"
                     android:scaleX="0.5"
                     android:scaleY="0.5" />
             </RelativeLayout>
@@ -259,6 +289,4 @@
 
 
 
-
 </RelativeLayout>
-

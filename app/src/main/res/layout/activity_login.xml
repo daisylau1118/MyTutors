@@ -18,30 +18,30 @@
                 android:layout_height="200dp"
                 android:layout_marginStart="6dp"
                 android:layout_marginBottom="40dp"
-                tools:srcCompat="@mipmap/Logo" />
+                tools:srcCompat="@mipmap/logo" />
 
             <EditText
                 android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:hint="Username"
                 android:inputType="textPersonName"
-                android:text="Username" />
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:text="Password" />
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
 
             <Button
                 android:id="@+id/forgotPassword"
