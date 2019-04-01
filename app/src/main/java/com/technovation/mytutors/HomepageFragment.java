@@ -22,6 +22,7 @@ import java.util.List;
 public class HomepageFragment extends Fragment {
 
     private Button profileCard;
+    private Button settings;
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -48,7 +49,17 @@ public class HomepageFragment extends Fragment {
             public void onClick(View v) {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ViewProfileFragment(), null).addToBackStack(null).commit();
             }
-        });\
+        });
+
+
+        // changing fragment to settings if settings is clicked
+        settings= view.findViewById(R.id.settingsButton);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new SettingsFragment(), null).addToBackStack(null).commit();
+            }
+        });
         */
 
         list = Arrays.asList(getResources().getStringArray(R.array.users));

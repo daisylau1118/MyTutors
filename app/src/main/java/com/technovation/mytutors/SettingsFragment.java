@@ -6,18 +6,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ViewProfileFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
 
-
-
-    public ViewProfileFragment() {
+    public SettingsFragment() {
         // Required empty public constructor
     }
 
@@ -26,9 +23,7 @@ public class ViewProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_viewing_profile, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
 }

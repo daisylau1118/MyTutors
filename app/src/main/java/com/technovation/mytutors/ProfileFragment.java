@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -13,6 +14,10 @@ import android.view.ViewGroup;
  */
 public class ProfileFragment extends Fragment {
 
+    private Button myProfile;
+    private Button myHistory;
+    private Button myRatings;
+    private Button savedPeople;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -23,8 +28,47 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
-        // temp connected to viewing profile but later change to just fragment_profile layout
+        View view =  inflater.inflate(R.layout.fragment_profile, container, false);
+
+
+        // changing fragment to myProfile if My profile is clicked
+        myProfile = view.findViewById(R.id.goToMyProfile);
+        myProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MyProfileFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+        // changing fragment to myHistory if My History is clicked
+        myHistory = view.findViewById(R.id.goToMyHistory);
+        myHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MyHistoryFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+        // changing fragment to myRatings if My Ratings is clicked
+        myRatings = view.findViewById(R.id.goToMyRatings);
+        myRatings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MyRatingsFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+        // changing fragment to savedPeople if savedPeople is clicked
+        savedPeople = view.findViewById(R.id.goToSavedPeople);
+        savedPeople.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new SavedPeopleFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+
+        return view;
     }
 
 }
