@@ -22,7 +22,8 @@
         android:background="@color/LightGrey"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        android:elevation="15dp">
 
         <ImageButton
             android:id="@+id/homeButtonBottomBar"

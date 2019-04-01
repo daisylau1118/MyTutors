@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Grey"
+    android:layout_marginBottom="15dp"
+    >
+
+    <Button
+        android:id="@+id/profileCardButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Transparent"/>
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/tempprofilepic" />
+
+
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/profilePic"
+        android:text="John Smith"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tutorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profilePic"
+        android:layout_below="@id/profileName"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:text="Tutor"
+        />
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileName"
+        android:layout_toRightOf="@id/tutorLabel"
+        android:layout_marginTop="-12dp"
+        android:layout_marginLeft="-55dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4.5"
+        android:scaleX="0.5"
+        android:scaleY="0.5" />
+
+</RelativeLayout>

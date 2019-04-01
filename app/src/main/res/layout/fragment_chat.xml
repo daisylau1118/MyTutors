@@ -5,10 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".ChatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/ChatTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="messages go here" />
+        android:layout_height="wrap_content"
+        android:text="Chat"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="30dp"
+        android:background="@color/LightGrey"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:elevation="10dp"/>
 
 </FrameLayout>
