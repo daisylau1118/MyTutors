@@ -11,11 +11,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class HomepageRecyclerAdaper extends RecyclerView.Adapter<HomepageRecyclerAdaper.myViewHolder> {
+public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecyclerAdapter.myViewHolder> {
 
     private List<String>list;
 
-    public HomepageRecyclerAdaper(List<String>list){
+    public HomepageRecyclerAdapter(List<String>list){
         this.list = list;
     }
 

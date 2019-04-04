@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,7 +24,7 @@ public class HomepageFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
-    private HomepageRecyclerAdaper recyclerAdaper;
+    private HomepageRecyclerAdapter recyclerAdaper;
     private List<String> list;
 
 
@@ -66,7 +64,7 @@ public class HomepageFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerAdaper = new HomepageRecyclerAdaper(list);
+        recyclerAdaper = new HomepageRecyclerAdapter(list);
         recyclerView.setAdapter(recyclerAdaper);
 
         recyclerView.setHasFixedSize(true);
