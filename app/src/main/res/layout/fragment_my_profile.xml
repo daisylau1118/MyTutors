@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="myprofile" />
+        android:id="@+id/MyProfileTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/LightGrey"
+        android:elevation="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="My Profile"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:id="@+id/userProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ProfileTitle"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/MyProfileTitle"
+        tools:layout_editor_absoluteX="16dp">
+
+        <ImageView
+            android:id="@+id/userProfilePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/tempprofilepic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userProfilePic"
+            android:layout_marginLeft="80dp"
+            android:text="edit"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/userProfilePic"
+            android:text="Emma Jones"
+            android:textColor="@color/Black"
+            android:textSize="33sp" />
+
+        <TextView
+            android:id="@+id/userstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userName"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@id/userProfilePic"
+            android:text="Tutor"
+            android:textSize="20sp" />
+
+        <RatingBar
+            android:id="@+id/userRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userstatus"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-5dp"
+            android:layout_toRightOf="@id/userProfilePic"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4"
+            android:scaleX=".9"
+            android:scaleY=".9" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editBio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Bio"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfile" />
+
+</android.support.constraint.ConstraintLayout>
