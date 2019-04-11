@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeButtonBottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:icon = "@drawable/home"
+        android:title="home"/>
+
+    <item
+        android:id="@+id/calendarButtonBottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/homeButtonBottomBar"
+        android:layout_marginLeft="65dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/homeButtonBottomBar"
+        android:background="@color/Transparent"
+        android:scaleX="2.2"
+        android:scaleY="2.2"
+        android:icon ="@drawable/calendericon"
+        android:title="schedule"/>
+
+    <item
+        android:id="@+id/profileButtonBottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/calendarButtonBottomBar"
+        android:layout_marginLeft="65dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/calendarButtonBottomBar"
+        android:background="@color/Transparent"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:icon ="@drawable/profileicon"
+        android:title="profile"/>
+
+    <item
+        android:id="@+id/chatButtonBottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/profileButtonBottomBar"
+        android:layout_marginLeft="65dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/profileButtonBottomBar"
+        android:background="@color/Transparent"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:icon ="@drawable/chaticon"
+        android:title="chat"/>
+
+
+</menu>

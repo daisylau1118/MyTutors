@@ -1,23 +1,52 @@
 package com.technovation.mytutors;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
 
     public static FragmentManager fragmentManager;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.homeButtonBottomBar:
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new HomepageFragment(), null).addToBackStack(null).commit();
+                    return true;
+                case R.id.calendarButtonBottomBar:
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ScheduleFragment(), null).addToBackStack(null).commit();
+                    return true;
+                case R.id.profileButtonBottomBar:
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ProfileFragment(), null).addToBackStack(null).commit();
+                    return true;
+                case R.id.chatButtonBottomBar:
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ChatFragment(), null).addToBackStack(null).commit();
+                    return true;
+            }
+            return false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         fragmentManager = getSupportFragmentManager();
 
@@ -34,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.FragmentContainer, homepageFragment, null);
             fragmentTransaction.commit();
         }
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        /*
 
         // changing fragment to schedule if calender icon on bottom bar is clicked
         ImageButton scheduleButton = (ImageButton)findViewById(R.id.calendarButtonBottomBar);
@@ -71,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ChatFragment(), null).addToBackStack(null).commit();
             }
         });
+
+        */
 
 
 
