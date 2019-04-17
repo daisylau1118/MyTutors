@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingRight="20dp"
+    android:paddingLeft="10dp"
+    android:background="@color/Grey">
+
+    <ImageView
+        android:id="@+id/ReviewProfilePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/tempprofilepic" />
+
+
+    <TextView
+        android:layout_below="@+id/review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_toRightOf="@+id/ReviewProfilePicture"
+        android:text="She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she's patient."
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/ReviewerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/ReviewProfilePicture"
+        android:text="Sarah Miller"
+        android:textSize="24sp" />
+
+    <RatingBar
+        android:id="@+id/review"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="-50dp"
+        android:layout_marginTop="-12dp"
+        android:layout_below="@id/ReviewerName"
+        android:layout_toRightOf="@+id/ReviewProfilePicture"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="5"
+        android:scaleX="0.6"
+        android:scaleY="0.6" />
+
+</RelativeLayout>

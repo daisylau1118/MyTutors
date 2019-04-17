@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookMeetingFragment"
+    android:background="@color/White">
+
+    <TextView
+        android:id="@+id/BookMeetingTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/LightGrey"
+        android:elevation="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Book A Meeting"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/BookMeeting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+
+        android:layout_marginEnd="25dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BookMeetingTitle"
+        app:layout_constraintVertical_bias="1.0"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Book a meeting with Emma"
+            android:textAlignment="center"
+            android:textSize="40dp" />
+
+        <EditText
+            android:id="@+id/editTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editDate"
+            android:layout_marginLeft="14dp"
+            android:layout_toRightOf="@id/time"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="time" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Time"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Date"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/editDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/date"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time"
+            android:layout_marginTop="-50dp"
+            android:scaleX=".7"
+            android:scaleY=".7" />
+
+
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="361dp"
+        android:layout_height="0dp"
+        android:background="@color/White"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/BookMeeting"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/BookMeeting"
+        app:layout_constraintTop_toTopOf="@+id/BookMeeting"
+        app:layout_constraintVertical_bias="0.0"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/BookingDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/booking_date"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirmBooking" />
+
+        <TextView
+            android:id="@+id/BookingTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/booking_time"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BookingDate" />
+
+        <TextView
+            android:id="@+id/confirmBooking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
+            android:text="You have booked a meeting with Emma"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CalendarView
+            android:id="@+id/calendarBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/BookingTime"
+            android:layout_marginTop="250dp"
+            android:scaleX=".7"
+            android:scaleY=".7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>

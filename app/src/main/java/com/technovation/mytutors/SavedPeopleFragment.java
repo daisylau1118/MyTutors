@@ -34,7 +34,7 @@ public class SavedPeopleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_saved_people, container, false);
 
-        list = Arrays.asList(getResources().getStringArray(R.array.users));
+        list = Arrays.asList(getResources().getStringArray(R.array.savedPeople));
         recyclerView = view.findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);

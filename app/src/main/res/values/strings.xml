@@ -20,8 +20,52 @@
         <item>Mica Fox,pic16</item>
     </string-array>
 
+    <string-array name="TutorRatings">
+        <item>Tara S.,pic1,review1</item>
+        <item>John K.,pic2,review2</item>
+        <item>Lea E.,pic3,review3</item>
+        <item>Beth L.,pic4,review4</item>
+        <item>Sara H.,pic5,review5</item>
+        <item>Kathy I.,pic6,review6</item>
+        <item>Ken W.,pic7,review7</item>
+        <item>Nial O.,pic8,review8</item>
+    </string-array>
 
+    <string-array name="MyRatings">
+        <item>Emma Jones,pic2,review1</item>
+        <item>Lily Owen,pic7,review2</item>
+        <item>Shanelle Hoffman,pic9,review3</item>
+        <item>Vivienne Corrigan,pic11,review4</item>
+        <item>Cherie Akhtar,pic12,review5</item>
+        <item>Shanelle Hoffman,pic14,review6</item>
+        <item>Mathias Horton,pic15,review7</item>
+    </string-array>
 
+    <string-array name="savedPeople">
+        <item>Emma Jones,pic2</item>
+        <item>Mia Lee,pic3</item>
+        <item>Lily Owen,pic7</item>
+        <item>Shanelle Hoffman,pic9</item>
+        <item>Vivienne Corrigan,pic11</item>
+        <item>Cherie Akhtar,pic12</item>
+        <item>Shanelle Hoffman,pic14</item>
+        <item>Mathias Horton,pic15</item>
+        <item>Mica Fox,pic16</item>
+    </string-array>
+
+    <string-array name="History">
+        <item>Emma Jones,pic2</item>
+        <item>Lily Owen,pic7</item>
+        <item>Cherie Akhtar,pic12</item>
+        <item>Mathias Horton,pic15</item>
+    </string-array>
+
+    <string name="user_name">Lori Brown</string>
+    <string name="user_bio"></string>
+    <string name="user_status">Student</string>
+
+   <string name="booking_date">April 14, 2019</string>
+    <string name="booking_time">3:30 pm</string>
 
 
 </resources>

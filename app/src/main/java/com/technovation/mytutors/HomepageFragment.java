@@ -50,6 +50,7 @@ public class HomepageFragment extends Fragment {
         });
 
 
+
         // changing fragment to settings if settings is clicked
         settings= view.findViewById(R.id.settingsButton);
         settings.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +60,7 @@ public class HomepageFragment extends Fragment {
             }
         });
         */
+
 
         list = Arrays.asList(getResources().getStringArray(R.array.users));
         recyclerView = view.findViewById(R.id.recycler_view);

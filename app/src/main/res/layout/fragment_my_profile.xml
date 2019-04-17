@@ -58,7 +58,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/userProfilePic"
-            android:text="Emma Jones"
+            android:text="@string/user_name"
             android:textColor="@color/Black"
             android:textSize="33sp" />
 
@@ -96,6 +96,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="40dp"
         android:hint="Bio"
+        android:text="@string/user_bio"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -49,13 +49,12 @@
                     android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Emma Jones"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/Black"
-                    android:textSize="33sp"
-                    android:layout_toRightOf="@id/profilePicture"
                     android:layout_marginLeft="15dp"
-                    />
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@id/profilePicture"
+                    android:text="Emma Jones"
+                    android:textColor="@color/Black"
+                    android:textSize="33sp" />
 
                 <TextView
                     android:id="@+id/status"
@@ -181,7 +180,7 @@
                 >
 
                 <ImageView
-                    android:id="@+id/studentProfilePicture"
+                    android:id="@+id/ReviewProfilePicture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scaleX="1"
@@ -206,18 +205,18 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/showRating"
                     android:layout_marginTop="-4dp"
-                    android:layout_toRightOf="@+id/studentProfilePicture"
+                    android:layout_toRightOf="@+id/ReviewProfilePicture"
                     android:text="She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she's patient."
                     android:textAlignment="textStart"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/studentRatingName"
+                    android:id="@+id/ReviewerName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_toRightOf="@id/studentProfilePicture"
+                    android:layout_toRightOf="@id/ReviewProfilePicture"
                     android:text="Sarah Miller"
                     android:textSize="24sp" />
 
@@ -227,8 +226,8 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="-50dp"
                     android:layout_marginTop="-12dp"
-                    android:layout_below="@id/studentRatingName"
-                    android:layout_toRightOf="@+id/studentProfilePicture"
+                    android:layout_below="@id/ReviewerName"
+                    android:layout_toRightOf="@+id/ReviewProfilePicture"
                     android:isIndicator="true"
                     android:numStars="5"
                     android:rating="5"
@@ -237,14 +236,19 @@
 
             </RelativeLayout>
 
-            <TextView
+            <Button
+                android:id="@+id/seeMoreBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/reviewButton"
-                android:layout_marginTop="-18dp"
+                android:layout_marginTop="-20dp"
                 android:layout_marginLeft="215dp"
                 android:text="See more ..."
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:background="@color/Transparent"
+
+                />
+
 
         </RelativeLayout>
 
