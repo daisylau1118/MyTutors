@@ -64,8 +64,13 @@
     <string name="user_bio"></string>
     <string name="user_status">Student</string>
 
-   <string name="booking_date">April 14, 2019</string>
+    <string name="booking_date">April 14, 2019</string>
     <string name="booking_time">3:30 pm</string>
+
+
+
+
+
 
 
 </resources>

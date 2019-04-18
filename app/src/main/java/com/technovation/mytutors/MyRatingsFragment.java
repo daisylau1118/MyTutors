@@ -35,7 +35,7 @@ public class MyRatingsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_ratings, container, false);
 
-        /*
+
         list = Arrays.asList(getResources().getStringArray(R.array.MyRatings));
         recyclerView = view.findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(view.getContext());
@@ -44,7 +44,7 @@ public class MyRatingsFragment extends Fragment {
         recyclerView.setAdapter(recyclerAdaper);
 
         recyclerView.setHasFixedSize(true);
-        */
+
         return view;
     }
 

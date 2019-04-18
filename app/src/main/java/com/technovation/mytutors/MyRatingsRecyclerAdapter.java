@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyRatingsRecyclerAdapter {/* extends RecyclerView.Adapter<MyRatingsRecyclerAdapter.myViewHolder>  {
+public class MyRatingsRecyclerAdapter extends RecyclerView.Adapter<MyRatingsRecyclerAdapter.myViewHolder>  {
 
     private List<String> list;
 
@@ -36,30 +36,30 @@ public class MyRatingsRecyclerAdapter {/* extends RecyclerView.Adapter<MyRatings
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomepageRecyclerAdapter.myViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull myViewHolder viewHolder, int i) {
         String profile = list.get(i);
         String name = profile.split(",")[0];
         String pic = profile.split(",")[1];
-        String review = profile.split(",")[3];
+        String review = profile.split(",")[2];
 
-        viewHolder.textView.setText(name);
-
+        viewHolder.nameView.setText(name);
+        viewHolder.review.setText(review);
     }
 
     public static class myViewHolder extends RecyclerView.ViewHolder {
 
         private RelativeLayout profileView;
-        private ImageView imageView;
-        private TextView textView;
+        private ImageView profilePicView;
+        private TextView nameView;
         private TextView review;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             this.profileView = (RelativeLayout)itemView;
-            this.textView = this.profileView.findViewById(R.id.ReviewerName);
-            this.imageView = this.profileView.findViewById(R.id.ReviewProfilePicture);
-            this.review = this.profileView.findViewById(R.id.review);
+            this.nameView = this.profileView.findViewById(R.id.ReviewerName);
+            this.profilePicView = this.profileView.findViewById(R.id.ReviewProfilePicture);
+            this.review = this.profileView.findViewById(R.id.tv_review);
         }
     }
-    */
+
 }

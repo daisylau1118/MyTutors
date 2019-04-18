@@ -22,7 +22,8 @@
 
 
     <TextView
-        android:layout_below="@+id/review"
+        android:id="@+id/tv_review"
+        android:layout_below="@+id/rb_review"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-4dp"
@@ -42,7 +43,7 @@
         android:textSize="24sp" />
 
     <RatingBar
-        android:id="@+id/review"
+        android:id="@+id/rb_review"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginLeft="-50dp"

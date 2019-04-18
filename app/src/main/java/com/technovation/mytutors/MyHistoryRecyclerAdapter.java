@@ -43,6 +43,7 @@ public class MyHistoryRecyclerAdapter extends RecyclerView.Adapter<MyHistoryRecy
 
         viewHolder.textView.setText(name);
 
+
     }
 
     public static class myViewHolder extends RecyclerView.ViewHolder {

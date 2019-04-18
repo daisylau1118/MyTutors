@@ -15,6 +15,8 @@ import android.widget.ImageButton;
  */
 public class ViewProfileFragment extends Fragment {
 
+    private ImageButton Chat;
+    private ImageButton BookMeeting;
 
     public ViewProfileFragment() {
         // Required empty public constructor
@@ -27,9 +29,9 @@ public class ViewProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_viewing_profile, container, false);
 
-        /*
+
         // changing fragment to chat if chat icon is clicked
-        ImageButton Chat = (ImageButton)findViewById(R.id.goToChat);
+        Chat = (ImageButton)view.findViewById(R.id.goToChat);
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,15 +39,15 @@ public class ViewProfileFragment extends Fragment {
             }
         });
         // changing fragment to book meeting if calender icon is clicked
-        ImageButton BookMeeting = (ImageButton)findViewById(R.id.goToCalender);
-        Chat.setOnClickListener(new View.OnClickListener() {
+        BookMeeting = (ImageButton)view.findViewById(R.id.goToCalender);
+        BookMeeting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new BookMeetingFragment(), null).addToBackStack(null).commit();
             }
         });
 
-        */
+
 
         return view;
     }
