@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -17,6 +16,7 @@ public class ViewProfileFragment extends Fragment {
 
     private ImageButton Chat;
     private ImageButton BookMeeting;
+    private ImageButton payment;
 
     public ViewProfileFragment() {
         // Required empty public constructor
@@ -44,6 +44,15 @@ public class ViewProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new BookMeetingFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+        // changing fragment to payment if pay icon is clicked
+        payment = (ImageButton)view.findViewById(R.id.goToPayment);
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new PaymentFragment(), null).addToBackStack(null).commit();
             }
         });
 

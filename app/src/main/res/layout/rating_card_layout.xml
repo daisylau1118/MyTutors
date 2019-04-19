@@ -2,11 +2,12 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingBottom="10dp"
     android:paddingRight="20dp"
     android:paddingLeft="10dp"
-    android:background="@color/Grey">
+    android:background="@color/Grey"
+    android:layout_marginBottom="15dp">
 
     <ImageView
         android:id="@+id/ReviewProfilePicture"
@@ -28,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-4dp"
         android:layout_toRightOf="@+id/ReviewProfilePicture"
-        android:text="She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she's patient."
+        android:text="Review"
         android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="16sp" />

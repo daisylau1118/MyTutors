@@ -67,10 +67,8 @@
     <string name="booking_date">April 14, 2019</string>
     <string name="booking_time">3:30 pm</string>
 
-
-
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

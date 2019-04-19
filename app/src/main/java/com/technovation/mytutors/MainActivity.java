@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static FragmentManager fragmentManager;
 
+    /*
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -28,19 +29,19 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new HomepageFragment(), null).addToBackStack(null).commit();
                     return true;
                 case R.id.calendarButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new PaymentFragment(), null).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ScheduleFragment(), null).addToBackStack(null).commit();
                     return true;
                 case R.id.profileButtonBottomBar:
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ProfileFragment(), null).addToBackStack(null).commit();
                     return true;
                 case R.id.chatButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ViewProfileFragment(), null).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ChatFragment(), null).addToBackStack(null).commit();
                     return true;
             }
             return false;
         }
     };
-
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        /*
+        ///*
 
         // changing fragment to schedule if calender icon on bottom bar is clicked
         ImageButton scheduleButton = (ImageButton)findViewById(R.id.calendarButtonBottomBar);
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        */
+        //*/
 
 
 

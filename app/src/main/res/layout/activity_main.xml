@@ -10,12 +10,12 @@
         android:id="@+id/FragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 
-    <!--<RelativeLayout -->
+    <RelativeLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -24,19 +24,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp"
         android:elevation="15dp"
-        android:visibility="invisible"
+
         >
 
-        <!--<ImageButton-->
+        <ImageButton
             android:id="@+id/homeButtonBottomBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/Transparent"
             android:scaleX="2.5"
             android:scaleY="2.5"
-            app:srcCompat="@drawable/homeicon" />
+            app:srcCompat="@drawable/home" />
 
-        <!--<ImageButton-->
+        <ImageButton
             android:id="@+id/calendarButtonBottomBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
             android:scaleY="2.2"
             app:srcCompat="@drawable/calendericon" />
 
-        <!--<ImageButton-->
+        <ImageButton
             android:id="@+id/profileButtonBottomBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             android:scaleY="2.5"
             app:srcCompat="@drawable/profileicon" />
 
-        <!--<ImageButton-->
+        <ImageButton
             android:id="@+id/chatButtonBottomBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,9 +75,9 @@
             android:scaleY="2"
             app:srcCompat="@drawable/chaticon" />
 
-    <!--</RelativeLayout>-->
+    </RelativeLayout>
 
-    <android.support.design.widget.BottomNavigationView
+    <!--<android.support.design.widget.BottomNavigationView-->
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="70dp"

@@ -51,7 +51,7 @@
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Emma Jones"
+            android:text="@string/user_name"
             android:layout_marginTop="15dp"
             android:textColor="@color/Black"
             android:textSize="33sp"
@@ -66,7 +66,7 @@
             android:layout_marginLeft="80dp"
             android:layout_toRightOf="@id/userProfilePic"
             android:textSize="20sp"
-            android:text="Tutor" />
+            android:text="@string/user_status" />
 
         <RatingBar
             android:id="@+id/userRating"
