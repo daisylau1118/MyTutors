@@ -2,22 +2,21 @@
     <string name="app_name">My Tutors</string>
 
     <string-array name="users">
-        <item>John Jones,pic1</item>
-        <item>Emma Smith,pic2</item>
-        <item>Mia Lee,pic3</item>
-        <item>Ben Joe,pic4</item>
-        <item>Sarah Miller,pic5</item>
-        <item>Chloe Cortez,pic6</item>
-        <item>Lily Owen,pic7</item>
-        <item>James Foley,pic8</item>
-        <item>Shanelle Hoffman,pic9</item>
-        <item>Alysia Newman,pic10</item>
-        <item>Vivienne Corrigan,pic11</item>
-        <item>Cherie Akhtar,pic12</item>
-        <item>Azra Santos,pic13</item>
-        <item>Shanelle Hoffman,pic14</item>
-        <item>Mat Horton,pic15</item>
-        <item>Mica Fox,pic16</item>
+        <item>John Jones,pic1,5</item>
+        <item>Emma Smith,pic2,4.5</item>
+        <item>Mia Lee,pic3,4.5</item>
+        <item>Ben Joe,pic4,5</item>
+        <item>Sarah Miller,pic5,4</item>
+        <item>Chloe Cortez,pic6,5</item>
+        <item>Lily Owen,pic7,4</item>
+        <item>James Foley,pic8,4</item>
+        <item>Shanelle Hoffman,pic9,4</item>
+        <item>Alysia Newman,pic10,5</item>
+        <item>Vivienne Corrigan,pic11,3.5</item>
+        <item>Cherie Akhtar,pic12,4</item>
+        <item>Azra Santos,pic13,4</item>
+        <item>Mat Horton,pic14,5</item>
+        <item>Mica Fox,pic15,3.5</item>
     </string-array>
 
     <string-array name="TutorRatings">
@@ -41,22 +40,22 @@
     </string-array>
 
     <string-array name="savedPeople">
-        <item>Emma Smith,pic2</item>
-        <item>Mia Lee,pic3</item>
-        <item>Lily Owen,pic7</item>
-        <item>Shanelle Hoffman,pic9</item>
-        <item>Vivienne Corrigan,pic11</item>
-        <item>Cherie Akhtar,pic12</item>
-        <item>Shanelle Hoffman,pic14</item>
-        <item>Mat Horton,pic15</item>
-        <item>Mica Fox,pic16</item>
+        <item>Emma Smith,pic2,4.5</item>
+        <item>Mia Lee,pic3,4.5</item>
+        <item>Lily Owen,pic7,4</item>
+        <item>Shanelle Hoffman,pic9,4</item>
+        <item>Vivienne Corrigan,pic11,3.5</item>
+        <item>Cherie Akhtar,pic12,4</item>
+        <item>Shanelle Hoffman,pic14,5</item>
+        <item>Mat Horton,pic14,5</item>
+        <item>Mica Fox,pic15,3.5</item>
     </string-array>
 
     <string-array name="History">
-        <item>Emma Smith,pic2</item>
-        <item>Lily Owen,pic7</item>
-        <item>Cherie Akhtar,pic12</item>
-        <item>Mat Horton,pic15</item>
+        <item>Emma Smith,pic2,4.5</item>
+        <item>Lily Owen,pic7,4</item>
+        <item>Cherie Akhtar,pic12,4</item>
+        <item>Mat Horton,pic14,5</item>
     </string-array>
 
     <string name="user_name">Lori Brown</string>

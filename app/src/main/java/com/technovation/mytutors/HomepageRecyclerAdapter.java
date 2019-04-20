@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -43,8 +44,12 @@ public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecycl
         String profile = list.get(i);
         String name = profile.split(",")[0];
         String pic = profile.split(",")[1];
+        String ratingStr = profile.split(",")[2]; // getting rating as a string
+
+        float rating = Float.parseFloat(ratingStr);//changing rating from double to float
 
         viewHolder.textView.setText(name);
+        viewHolder.ratingBar.setRating(rating);
 
     }
 
@@ -53,12 +58,15 @@ public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecycl
         private RelativeLayout profileView;
         private ImageView imageView;
         private TextView textView;
+        private RatingBar ratingBar;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             this.profileView = (RelativeLayout)itemView;
             this.textView = this.profileView.findViewById(R.id.profileName);
             this.imageView = this.profileView.findViewById(R.id.profilePic);
+            this.ratingBar = this.profileView.findViewById(R.id.ratingBar);
+
         }
     }
 
