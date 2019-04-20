@@ -18,6 +18,8 @@ public class BookMeetingFragmentConfirm extends DialogFragment {
     private String date;
     private String time;
 
+
+
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
