@@ -12,7 +12,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/et_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -20,10 +20,10 @@
                 android:paddingLeft="5dp"
                 android:ems="14"
                 android:inputType="textPersonName"
-                android:text="Name"/>
+                android:hint="Name"/>
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/et_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -31,41 +31,33 @@
                 android:paddingLeft="5dp"
                 android:ems="14"
                 android:inputType="textEmailAddress"
-                android:text="Email"/>
+                android:hint="Email"/>
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/et_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="14"
                 android:layout_marginBottom="50dp"
-                android:inputType="textPersonName"
-                android:text="Password" />
+                android:inputType="textPassword"
+                android:hint="Password" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/et_retype_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="14"
                 android:layout_marginBottom="50dp"
-                android:inputType="textPersonName"
-                android:text="Retype Password" />
+                android:inputType="textPassword"
+                android:hint="Retype Password" />
 
             <Button
                 android:id="@+id/btn_sign_up_to_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:text="Next" />
 
-
-
-
-
         </LinearLayout>
-
-
-
 
 
 </RelativeLayout>

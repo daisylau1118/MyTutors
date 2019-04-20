@@ -2,18 +2,28 @@ package com.technovation.mytutors;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.util.Patterns;
 import android.widget.Button;
 import android.view.View;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import android.widget.EditText;
+import android.widget.Toast;
 
-public class SignUpActivity extends AppCompatActivity implements View.OnClickListener
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener, OnCompleteListener<AuthResult>
 {
+    private FirebaseAuth mAuth;
+
     private Button btnNextScreen;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference();
+    private EditText etName, etEmail, etPassword, etRetypePassword;
 
     @Override
     public void onCreate (@Nullable Bundle savedInstanceState)
@@ -21,13 +31,46 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        mAuth = FirebaseAuth.getInstance();
+
         btnNextScreen = findViewById(R.id.btn_sign_up_to_main);
         btnNextScreen.setOnClickListener(this);
+
+        etName = findViewById(R.id.et_name);
+        etEmail = findViewById(R.id.et_email);
+        etPassword = findViewById(R.id.et_password);
+        etRetypePassword = findViewById(R.id.et_retype_password);
     }
 
     public void onClick (View v)
     {
-        startActivity(new Intent(this,MainActivity.class));
+        String name = etName.getText().toString();
+        String email = etEmail.getText().toString();
+        String password = etPassword.getText().toString();
+        String retype_password = etRetypePassword.getText().toString();
+
+        if (!name.isEmpty()
+            && !password.isEmpty()
+            && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+            && password.equals(retype_password))
+        {
+            mAuth.createUserWithEmailAndPassword(email,password)
+                    .addOnCompleteListener(this, this);
+        }
     }
 
+
+    @Override
+    public void onComplete(@NonNull Task<AuthResult> task)
+    {
+        if (task.isSuccessful())
+        {
+            FirebaseUser user = mAuth.getCurrentUser();
+            Log.d("Firebase User", user.getDisplayName() + user.getEmail());
+            startActivity(new Intent(this,MainActivity.class));
+        }else
+        {
+            Toast.makeText(this,"Failed to create user", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
