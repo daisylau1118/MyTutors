@@ -1,6 +1,8 @@
 package com.technovation.mytutors;
 
+import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,22 +13,24 @@ import android.widget.Toast;
 
 public class BookMeetingFragmentConfirm extends DialogFragment {
 
+
+    private String person;
+    private String time;
+    private String date;
+
     public BookMeetingFragmentConfirm() {
         // Required empty public constructor
     }
 
-    private String date;
-    private String time;
-
-
-
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-
+        person = getArguments().getString("person");
+        time = getArguments().getString("time");
+        date = getArguments().getString("date");
 
         Dialog dialog = new AlertDialog.Builder(getActivity())
-                .setTitle("Book a meeting with Emma on "+ date +" at " + time + "?")
+                .setTitle("Book a meeting with " + person + " on "+ date +" at " + time + "?")
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
