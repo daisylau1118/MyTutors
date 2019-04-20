@@ -8,7 +8,7 @@
     tools:context=".PaymentFragment"
     android:background="@color/White">
 
-    <TextView
+    <!--<TextView-->
         android:id="@+id/PaymentTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,18 +36,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PaymentTitle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.714">
 
 
         <TextView
             android:id="@+id/title"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="25dp"
-            android:text="Make a payment to Emma"
+            android:text="Make a payment"
             android:textAlignment="center"
             android:textColor="@color/Black"
             android:textSize="36dp"
@@ -56,19 +56,46 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:text="Pay to:"
+            android:textColor="@color/Black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <EditText
+            android:id="@+id/editPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/person"
+            android:layout_weight="1"
+            android:ems="10"
+            app:layout_constraintStart_toEndOf="@+id/person"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
             android:id="@+id/paymentConfirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             android:text="What method of payment would you like to use?"
             android:textAlignment="center"
             android:textColor="@color/Black"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/person" />
 
         <TextView
             android:id="@+id/cost"
@@ -101,11 +128,11 @@
 
         <ImageView
             android:id="@+id/mastercard"
-            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
+            android:clickable="true"
             android:scaleX="1.5"
             android:scaleY="1.5"
             android:src="@mipmap/mastercard"
@@ -114,11 +141,11 @@
 
         <ImageView
             android:id="@+id/visa"
-            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
+            android:clickable="true"
             android:scaleX="1.5"
             android:scaleY="1.5"
             android:src="@mipmap/visa"
@@ -127,11 +154,11 @@
 
         <ImageView
             android:id="@+id/paypal"
-            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
+            android:clickable="true"
             android:scaleX="1.5"
             android:scaleY="1.5"
             android:src="@mipmap/paypal"
@@ -140,11 +167,11 @@
 
         <ImageView
             android:id="@+id/debit"
-            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="20dp"
+            android:clickable="true"
             android:scaleX="1.5"
             android:scaleY="1.5"
             android:src="@mipmap/debit"
