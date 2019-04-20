@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 
 /**
@@ -19,7 +20,7 @@ import android.widget.EditText;
 public class BookMeetingFragment extends DialogFragment implements View.OnClickListener{
 
     private Button confirm;
-    private Button payment;
+    private ImageButton payment;
 
     private EditText person;
     private EditText time;
@@ -45,16 +46,16 @@ public class BookMeetingFragment extends DialogFragment implements View.OnClickL
         confirm = view.findViewById(R.id.confirm_btn);
         confirm.setOnClickListener(this);
 
-        /*
+
         // if user presses payment button they will be taken to payment fragment
-        payment= view.findViewById(R.id.payment_btn);
+        payment= (ImageButton)view.findViewById(R.id.pay_btn);
         payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new PaymentFragment(), null).addToBackStack(null).commit();
             }
         });
-        */
+
 
         //person = view.findViewById(R.id.editPerson);
         //time = view.findViewById(R.id.editTime);

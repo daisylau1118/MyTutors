@@ -189,6 +189,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editPrice" />
 
+        <Button
+            android:id="@+id/book_meeting_btn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="200dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Grey"
+            android:text="Book a Meeting"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPrice" />
+
 
     </android.support.constraint.ConstraintLayout>
 

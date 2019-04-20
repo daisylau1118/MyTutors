@@ -32,13 +32,12 @@
     </string-array>
 
     <string-array name="MyRatings">
-        <item>Emma Smith,pic2,review1</item>
-        <item>Lily Owen,pic7,review2</item>
-        <item>Shanelle Hoffman,pic9,review3</item>
-        <item>Vivienne Corrigan,pic11,review4</item>
-        <item>Cherie Akhtar,pic12,review5</item>
-        <item>Shanelle Hoffman,pic14,review6</item>
-        <item>Mat Horton,pic15,review7</item>
+        <item>Emma Smith,pic2,review1,5</item>
+        <item>Lily Owen,pic7,review2,4.5</item>
+        <item>Shanelle Hoffman,pic9,review3,4</item>
+        <item>Vivienne Corrigan,pic11,review4,4.5</item>
+        <item>Cherie Akhtar,pic12,review5,3.5</item>
+        <item>Mat Horton,pic15,review7,4</item>
     </string-array>
 
     <string-array name="savedPeople">
