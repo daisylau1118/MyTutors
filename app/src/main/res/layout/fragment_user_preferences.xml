@@ -234,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/level_cb_4"
                 android:layout_marginTop="20dp"
-                android:text="Availabilty"
+                android:text="Availability"
                 android:textColor="@color/Black"
                 android:textSize="30dp" />
 

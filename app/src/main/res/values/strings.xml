@@ -32,7 +32,7 @@
     </string-array>
 
     <string-array name="MyRatings">
-        <item>Emma Jones,pic2,review1</item>
+        <item>Emma Smith,pic2,review1</item>
         <item>Lily Owen,pic7,review2</item>
         <item>Shanelle Hoffman,pic9,review3</item>
         <item>Vivienne Corrigan,pic11,review4</item>
@@ -42,7 +42,7 @@
     </string-array>
 
     <string-array name="savedPeople">
-        <item>Emma Jones,pic2</item>
+        <item>Emma Smith,pic2</item>
         <item>Mia Lee,pic3</item>
         <item>Lily Owen,pic7</item>
         <item>Shanelle Hoffman,pic9</item>
@@ -54,7 +54,7 @@
     </string-array>
 
     <string-array name="History">
-        <item>Emma Jones,pic2</item>
+        <item>Emma Smith,pic2</item>
         <item>Lily Owen,pic7</item>
         <item>Cherie Akhtar,pic12</item>
         <item>Mat Horton,pic15</item>

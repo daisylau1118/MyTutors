@@ -25,7 +25,7 @@ public class PaymentFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_payment, container, false);
+         View view =  inflater.inflate(R.layout.fragment_payment, container, false);
         confirm = view.findViewById(R.id.confirm);
         confirm.setOnClickListener(this);
         return view;

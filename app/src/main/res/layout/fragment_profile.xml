@@ -39,13 +39,7 @@
             android:layout_marginLeft="45dp"
             android:layout_marginRight="10dp"
             android:src="@drawable/tempprofilepic" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/userProfilePic"
-            android:layout_marginLeft="80dp"
-            android:text="edit"
-            android:textSize="20sp"/>
+
 
         <TextView
             android:id="@+id/userName"
@@ -78,7 +72,7 @@
             android:layout_toRightOf="@id/userProfilePic"
             android:isIndicator="true"
             android:numStars="5"
-            android:rating="4"
+            android:rating="4.5"
             android:scaleX=".9"
             android:scaleY=".9" />
 

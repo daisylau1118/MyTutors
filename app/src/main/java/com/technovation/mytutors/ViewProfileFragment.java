@@ -19,6 +19,7 @@ public class ViewProfileFragment extends Fragment {
     private ImageButton BookMeeting;
     private ImageButton payment;
     private Button seeMore;
+    private ImageButton rate;
 
     public ViewProfileFragment() {
         // Required empty public constructor
@@ -67,7 +68,14 @@ public class ViewProfileFragment extends Fragment {
             }
         });
 
-
+        //rate user button
+        rate = (ImageButton)view.findViewById(R.id.ratingButton);
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new LeaveReviewFragment(), null).addToBackStack(null).commit();
+            }
+        });
 
         return view;
     }
