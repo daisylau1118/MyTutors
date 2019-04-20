@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ProfileFragment(), null).addToBackStack(null).commit();
                     return true;
                 case R.id.chatButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ChatFragment(), null).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MessagesFragment(), null).addToBackStack(null).commit();
                     return true;
             }
             return false;
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ChatFragment(), null).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MessagesFragment(), null).addToBackStack(null).commit();
             }
         });
 

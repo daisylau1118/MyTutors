@@ -8,7 +8,7 @@
     tools:context=".BookMeetingFragment"
     android:background="@color/White">
 
-    <TextView
+    <!--<TextView-->
         android:id="@+id/BookMeetingTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -24,89 +24,140 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/BookMeeting"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="40dp"
-
-        android:layout_marginEnd="25dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BookMeetingTitle"
-        app:layout_constraintVertical_bias="1.0"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/title"
+        <RelativeLayout
+            android:id="@+id/BookMeeting"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+
             android:layout_marginTop="20dp"
-            android:text="Book a meeting with Emma"
-            android:textAlignment="center"
-            android:textSize="40dp" />
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
 
-        <EditText
-            android:id="@+id/editTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editDate"
-            android:layout_marginLeft="14dp"
-            android:layout_toRightOf="@id/time"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="time" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/date"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:text="Time"
-            android:textSize="20dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:text="Date"
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Book a meeting"
+                android:textAlignment="center"
+                android:textSize="40dp" />
 
-        <EditText
-            android:id="@+id/editDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@id/date"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="date" />
+            <EditText
+                android:id="@+id/editTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editPerson"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/time"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="time" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/time"
-            android:layout_marginTop="-50dp"
-            android:scaleX=".7"
-            android:scaleY=".7" />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/person"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Time:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Person:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editPerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/person"
+                android:layout_weight="1"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:text="Date:"
+                android:textSize="20sp" />
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="40dp"
+                android:scaleX=".7"
+                android:scaleY=".7" />
+
+            <Button
+                android:id="@+id/confirm_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_description"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="220dp"
+
+                android:background="@color/Transparent"
+                android:text="Confirm" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="130dp"
+                android:text="Description:"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_marginLeft="28dp"
+                android:ems="12" />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <android.support.constraint.ConstraintLayout
+    </ScrollView>
+
+
+    <!--<android.support.constraint.ConstraintLayout-->
         android:layout_width="361dp"
         android:layout_height="0dp"
         android:background="@color/White"
@@ -118,7 +169,7 @@
         app:layout_constraintVertical_bias="0.0"
         android:visibility="gone">
 
-        <TextView
+        <!--<TextView-->
             android:id="@+id/BookingDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -134,7 +185,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/confirmBooking" />
 
-        <TextView
+        <!--<TextView-->
             android:id="@+id/BookingTime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -150,7 +201,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BookingDate" />
 
-        <TextView
+        <!--<TextView-->
             android:id="@+id/confirmBooking"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -165,7 +216,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <CalendarView
+        <!--<CalendarView-->
             android:id="@+id/calendarBooking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -177,7 +228,7 @@
             app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    <!--</android.support.constraint.ConstraintLayout>-->
 
 
 </android.support.constraint.ConstraintLayout>

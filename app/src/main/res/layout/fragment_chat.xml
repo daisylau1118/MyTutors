@@ -15,7 +15,7 @@
         android:elevation="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:text="Chat"
+        android:text="@string/chatting_name"
         android:textAlignment="center"
         android:textColor="@color/Black"
         android:textSize="30dp"
@@ -44,7 +44,7 @@
         android:layout_marginStart="177dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="176dp"
-        android:text="You are now chatting with ~~~~~"
+        android:text="You are now chatting with Emma Smith"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ChatTitle" />
@@ -53,8 +53,8 @@
         android:id="@+id/chatBubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="70dp"
         android:scaleX="4"
         android:scaleY="4"
         android:src="@drawable/chat_bubble"
@@ -65,12 +65,23 @@
         android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="130dp"
         android:layout_marginBottom="10dp"
         android:scaleX="2"
         android:scaleY="2"
         android:text="Hello"
         app:layout_constraintBottom_toBottomOf="@+id/chatBubble"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/profile_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:src="@drawable/tempprofilepic"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

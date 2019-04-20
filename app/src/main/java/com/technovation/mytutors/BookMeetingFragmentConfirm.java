@@ -24,7 +24,7 @@ public class BookMeetingFragmentConfirm extends DialogFragment {
 
 
         Dialog dialog = new AlertDialog.Builder(getActivity())
-                .setTitle("Book a meeting with Emma on "+ date +" at" + time)
+                .setTitle("Book a meeting with Emma on "+ date +" at " + time + "?")
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

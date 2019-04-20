@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -17,6 +18,7 @@ public class ViewProfileFragment extends Fragment {
     private ImageButton Chat;
     private ImageButton BookMeeting;
     private ImageButton payment;
+    private Button seeMore;
 
     public ViewProfileFragment() {
         // Required empty public constructor
@@ -53,6 +55,15 @@ public class ViewProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new PaymentFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+        // changing fragment to see more reviews if see more button clicked
+        seeMore = view.findViewById(R.id.see_more_btn);
+        seeMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MyRatingsFragment(), null).addToBackStack(null).commit();
             }
         });
 

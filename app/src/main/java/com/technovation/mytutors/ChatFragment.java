@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 
 /**
@@ -13,7 +15,7 @@ import android.view.ViewGroup;
  */
 public class ChatFragment extends Fragment {
 
-
+    private ImageButton profile;
     public ChatFragment() {
         // Required empty public constructor
     }
@@ -23,7 +25,16 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false);
+        View view =  inflater.inflate(R.layout.fragment_chat, container, false);
+        profile= (ImageButton)view.findViewById(R.id.profile_btn);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ViewProfileFragment(), null).addToBackStack(null).commit();
+            }
+        });
+        return view;
     }
+
 
 }

@@ -37,14 +37,15 @@
             android:id="@+id/calendarView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="20dp" />
 
         <TextView
             android:id="@+id/Date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="25dp"
-            android:text="Wednesday, April 3"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="-10dp"
+            android:text="Saturday, April 20"
             android:textColor="@color/Black"
             android:textSize="35dp"/>
         <TextView
@@ -64,6 +65,30 @@
             android:text="Edit"
             android:textColor="@color/NavyBlue"
             android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/book_meeting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:background="@color/Grey"
+            android:text="Book a Meeting" />
+
+        <!--<TextView-->
+            android:id="@+id/book_meeting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/Grey"
+            android:textSize="20dp"
+            android:clickable="true"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Book a Meeting" />
+
 
 
 

@@ -2,8 +2,8 @@
     <string name="app_name">My Tutors</string>
 
     <string-array name="users">
-        <item>John Smith,pic1</item>
-        <item>Emma Jones,pic2</item>
+        <item>John Jones,pic1</item>
+        <item>Emma Smith,pic2</item>
         <item>Mia Lee,pic3</item>
         <item>Ben Joe,pic4</item>
         <item>Sarah Miller,pic5</item>
@@ -16,7 +16,7 @@
         <item>Cherie Akhtar,pic12</item>
         <item>Azra Santos,pic13</item>
         <item>Shanelle Hoffman,pic14</item>
-        <item>Mathias Horton,pic15</item>
+        <item>Mat Horton,pic15</item>
         <item>Mica Fox,pic16</item>
     </string-array>
 
@@ -38,7 +38,7 @@
         <item>Vivienne Corrigan,pic11,review4</item>
         <item>Cherie Akhtar,pic12,review5</item>
         <item>Shanelle Hoffman,pic14,review6</item>
-        <item>Mathias Horton,pic15,review7</item>
+        <item>Mat Horton,pic15,review7</item>
     </string-array>
 
     <string-array name="savedPeople">
@@ -49,7 +49,7 @@
         <item>Vivienne Corrigan,pic11</item>
         <item>Cherie Akhtar,pic12</item>
         <item>Shanelle Hoffman,pic14</item>
-        <item>Mathias Horton,pic15</item>
+        <item>Mat Horton,pic15</item>
         <item>Mica Fox,pic16</item>
     </string-array>
 
@@ -57,7 +57,7 @@
         <item>Emma Jones,pic2</item>
         <item>Lily Owen,pic7</item>
         <item>Cherie Akhtar,pic12</item>
-        <item>Mathias Horton,pic15</item>
+        <item>Mat Horton,pic15</item>
     </string-array>
 
     <string name="user_name">Lori Brown</string>
@@ -66,6 +66,8 @@
 
     <string name="booking_date">April 14, 2019</string>
     <string name="booking_time">3:30 pm</string>
+
+    <string name="chatting_name">Emma Smith</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

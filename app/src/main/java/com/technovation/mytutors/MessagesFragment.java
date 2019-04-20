@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 
 /**
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
  */
 public class MessagesFragment extends Fragment {
 
+    private ImageButton chat1;
 
     public MessagesFragment() {
         // Required empty public constructor
@@ -23,7 +25,15 @@ public class MessagesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_messages, container, false);
+        View view = inflater.inflate(R.layout.fragment_messages, container, false);
+        chat1= view.findViewById(R.id.messages_btn1);
+        chat1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ChatFragment(), null).addToBackStack(null).commit();
+            }
+        });
+        return view;
     }
 
 }
