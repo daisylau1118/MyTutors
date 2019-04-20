@@ -159,13 +159,14 @@
                 android:textColor="@color/Black"
                 android:textSize="30dp" />
 
+
             <CheckBox
                 android:id="@+id/level_cb_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/level_title"
                 android:layout_marginTop="10dp"
-                android:text="Middle school" />
+                android:text="Elementry" />
 
             <CheckBox
                 android:id="@+id/level_cb_2"
@@ -173,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/level_cb_1"
                 android:layout_marginTop="5dp"
-                android:text="High School" />
+                android:text="Grade 7" />
 
             <CheckBox
                 android:id="@+id/level_cb_3"
@@ -181,13 +182,57 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/level_cb_2"
                 android:layout_marginTop="5dp"
+                android:text="Grade 8" />
+            <CheckBox
+                android:id="@+id/level_cb_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/level_cb_3"
+                android:layout_marginTop="5dp"
+                android:text="Grade 9" />
+            <CheckBox
+                android:id="@+id/level_cb_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/level_title"
+                android:layout_toRightOf="@id/level_cb_1"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="10dp"
+                android:text="Grade 10" />
+            <CheckBox
+                android:id="@+id/level_cb_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/level_cb_5"
+                android:layout_toRightOf="@id/level_cb_2"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="85dp"
+                android:text="Grade 11" />
+            <CheckBox
+                android:id="@+id/level_cb_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/level_cb_6"
+                android:layout_toRightOf="@id/level_cb_3"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="85dp"
+                android:text="Grade 12" />
+            <CheckBox
+                android:id="@+id/level_cb_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/level_cb_7"
+                android:layout_toRightOf="@id/level_cb_4"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="85dp"
                 android:text="Post Secondary" />
+
 
             <TextView
                 android:id="@+id/availabilty_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/level_cb_3"
+                android:layout_below="@id/level_cb_4"
                 android:layout_marginTop="20dp"
                 android:text="Availabilty"
                 android:textColor="@color/Black"
