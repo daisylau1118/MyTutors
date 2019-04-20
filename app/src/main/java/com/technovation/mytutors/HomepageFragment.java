@@ -40,14 +40,7 @@ public class HomepageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_homepage, container, false);
 
         /*
-        // changing fragment to viewing profile if profile card (on homepage) is clicked
-        profileCard = view.findViewById(R.id.profileCardButton);
-        profileCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ViewProfileFragment(), null).addToBackStack(null).commit();
-            }
-        });
+
 
 
 
@@ -70,6 +63,22 @@ public class HomepageFragment extends Fragment {
         recyclerView.setAdapter(recyclerAdaper);
 
         recyclerView.setHasFixedSize(true);
+
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(
+                                                getContext(),
+                                                recyclerView,
+                                                new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ViewProfileFragment(), null).addToBackStack(null).commit();
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
+
 
 
 

@@ -30,7 +30,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditPrefTitle"
         app:layout_constraintVertical_bias="0.0">
@@ -41,11 +41,39 @@
             android:paddingLeft="40dp">
 
             <TextView
-                android:id="@+id/subject_title"
+                android:id="@+id/label_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Subject"
+                android:text="I am a... "
+                android:textColor="@color/Black"
+                android:textSize="30dp" />
+
+            <CheckBox
+                android:id="@+id/tutor_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_title"
+                android:layout_marginTop="10dp"
+                android:text="Tutor" />
+
+            <CheckBox
+                android:id="@+id/student_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_title"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tutor_cb"
+                android:text="Student" />
+
+            <TextView
+                android:id="@+id/subject_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/student_cb"
+                android:layout_marginTop="20dp"
+                android:text="Subjects"
                 android:textColor="@color/Black"
                 android:textSize="30dp" />
 
@@ -110,6 +138,15 @@
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/subject_cb_3"
                 android:text="Chemistry" />
+            <CheckBox
+                android:id="@+id/subject_cb_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subject_cb_7"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/subject_cb_4"
+                android:text="Science" />
 
 
             <TextView
@@ -169,7 +206,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/availabilty_cb_1"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Tuesday" />
 
             <CheckBox
@@ -177,7 +214,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/availabilty_cb_2"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Wednesday" />
 
             <CheckBox
@@ -185,7 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/availabilty_cb_3"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Thursday" />
 
             <CheckBox
@@ -204,7 +241,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/availabilty_cb_5"
                 android:layout_marginLeft="88dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/availabilty_cb_2"
                 android:text="Saturday" />
 
@@ -213,9 +250,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/availabilty_cb_6"
-                android:layout_toRightOf="@id/availabilty_cb_3"
                 android:layout_marginLeft="67dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/availabilty_cb_3"
                 android:text="Sunday" />
 
 
