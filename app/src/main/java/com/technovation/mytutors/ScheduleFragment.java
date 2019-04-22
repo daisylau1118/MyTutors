@@ -76,6 +76,7 @@ public class ScheduleFragment extends Fragment {
 
         date = view.findViewById(R.id.date);
         calender = view.findViewById(R.id.calendarView);
+        dateInfo = view.findViewById(R.id.date_info);
 
         //changing the date to match selected date
         // if user selects another date
@@ -93,23 +94,31 @@ public class ScheduleFragment extends Fragment {
                 selectedDate = simpleDateFormat.format(tempdate);
                 date.setText(selectedDate);
 
+                //changing the info under date to match selected date
+                if (selectedDate.equals("Mon, Apr 22")) //temp-- get booking info from database later
+                    dateInfo.setText("• 11:00am: Meet Emma at library");
+                else
+                    dateInfo.setText("• no events");
+
             }//met
         });
         // user stays on current date
         if (tempdate == null){
             selectedDate = simpleDateFormat.format(new Date(calender.getDate()));
             date.setText(selectedDate);
+
+            //changing the info under date to match selected date
+            if (selectedDate.equals("Mon, Apr 22")) //temp-- get booking info from database later
+                dateInfo.setText("• 11:00am: Meet Emma at library");
+            else
+                dateInfo.setText("• no events");
         }
 
 
-        dateInfo = view.findViewById(R.id.date_info);
 
 
-        //changing the info under date to match selected date
-        if (selectedDate.equals("Sun, Apr 21")) //temp-- get booking info from database later
-            dateInfo.setText("• 11:00am: Meet Emma at library");
-        else
-            dateInfo.setText("• no events");
+
+
 
 
 
