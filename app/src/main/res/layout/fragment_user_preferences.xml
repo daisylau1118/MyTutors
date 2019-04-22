@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/subject_cb_1"
                 android:layout_marginTop="5dp"
-                android:text="French" />
+                android:text="Languages" />
 
 
             <CheckBox
@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/level_cb_0"
                 android:layout_marginTop="5dp"
-                android:text="Middle School" />
+                android:text="Junior High" />
 
             <CheckBox
                 android:id="@+id/level_cb_2"

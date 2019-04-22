@@ -14,15 +14,33 @@ import android.widget.CheckBox;
  */
 public class UserPreferencesFragment extends Fragment {
 
-    private CheckBox subject0;
-    private CheckBox subject1;
-    private CheckBox subject2;
-    private CheckBox subject3;
-    private CheckBox subject4;
+    private CheckBox subject0; // math
+    private CheckBox subject1; // ela
+    private CheckBox subject2; // lang
+    private CheckBox subject3; // social
+    private CheckBox subject4; // science
 
+    private CheckBox level0; // elementary
+    private CheckBox level1; // junior
+    private CheckBox level2; // high school
+    private CheckBox level4; // post secondary
 
+    private CheckBox availability0; // mon
+    private CheckBox availability1; // tues
+    private CheckBox availability2; // wed
+    private CheckBox availability3; // thurs
+    private CheckBox availability4; // fri
+    private CheckBox availability5; // sat
+    private CheckBox availability6; // sun
 
-
+    private CheckBox other0; // meet home
+    private CheckBox other1; //meet public
+    private CheckBox other2; // french immersion
+    private CheckBox other3; // slow learner
+    private CheckBox other4; // adhd/add
+    private CheckBox other5; // hearing
+    private CheckBox other6; // esl
+    private CheckBox other7; // learning disability
 
     public UserPreferencesFragment() {
         // Required empty public constructor
