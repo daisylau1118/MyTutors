@@ -7,18 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class UserPreferencesFragment extends Fragment {
-
+    /*
     private CheckBox subject0; // math
     private CheckBox subject1; // ela
     private CheckBox subject2; // lang
     private CheckBox subject3; // social
     private CheckBox subject4; // science
+    //subject
+    private boolean math = false;
+    private boolean ela = false;
+    private boolean lang = false;
+    private boolean social = false;
+    private boolean science = false;
+
 
     private CheckBox level0; // elementary
     private CheckBox level1; // junior
@@ -41,6 +49,7 @@ public class UserPreferencesFragment extends Fragment {
     private CheckBox other5; // hearing
     private CheckBox other6; // esl
     private CheckBox other7; // learning disability
+    */
 
     public UserPreferencesFragment() {
         // Required empty public constructor
@@ -52,15 +61,12 @@ public class UserPreferencesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_user_preferences, container, false);
-
-        subject0 = getView().findViewById(R.id.subject_cb_0);
-        if (subject0.isChecked()) {
-            //put info to firebase here
-        }
-        subject1 = getView().findViewById(R.id.subject_cb_1);
-        subject2 = getView().findViewById(R.id.subject_cb_2);
-        subject3 = getView().findViewById(R.id.subject_cb_3);
-        subject4 = getView().findViewById(R.id.subject_cb_4);
+        /*
+        subject0 = view.findViewById(R.id.subject_cb_0);
+        subject1 = view.findViewById(R.id.subject_cb_1);
+        subject2 = view.findViewById(R.id.subject_cb_2);
+        subject3 = view.findViewById(R.id.subject_cb_3);
+        subject4 = view.findViewById(R.id.subject_cb_4);
 
         level0 = view.findViewById(R.id.level_cb_0);
         level1 = view.findViewById(R.id.level_cb_1);
@@ -83,9 +89,12 @@ public class UserPreferencesFragment extends Fragment {
         other5 = view.findViewById(R.id.other_cb_5);
         other6 = view.findViewById(R.id.other_cb_6);
         other7 = view.findViewById(R.id.other_cb_7);
-
+        */
         return view;
 
     }
 
+    public void onCheckboxClicked(View view) {
+        //found in main activity
+    }
 }

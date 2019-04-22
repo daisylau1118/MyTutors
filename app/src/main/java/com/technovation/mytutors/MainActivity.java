@@ -5,7 +5,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -108,12 +110,143 @@ public class MainActivity extends AppCompatActivity {
 
         //*/
 
+    }
 
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
 
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            //subject
+            case R.id.subject_cb_0: //math
+                if (checked) {
+                    //math = true;
+                    Toast.makeText(this, "math", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.subject_cb_1: //ela
+                if (checked) {
+                    Toast.makeText(this, "ela", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.subject_cb_2://language
+                if (checked) {
 
+                }
+                break;
+            case R.id.subject_cb_3: //social
+                if (checked) {
 
+                }
+                break;
+            case R.id.subject_cb_4:// science
+                if (checked) {
 
+                }
+                break;
 
+            //level
+            case R.id.level_cb_0: //elementary
+                if (checked) {
+
+                }
+                break;
+            case R.id.level_cb_1: // junior high
+                if (checked) {
+
+                }
+                break;
+            case R.id.level_cb_2: // high school
+                if (checked) {
+
+                }
+                break;
+            case R.id.level_cb_3: // post secondary
+                if (checked) {
+
+                }
+                break;
+
+            //availability
+            case R.id.availability_cb_0: // mon
+                if (checked) {
+
+                }
+                break;
+            case R.id.availability_cb_1: // tues
+                if (checked) {
+
+                }
+                break;
+            case R.id.availability_cb_2: //wed
+                if (checked) {
+
+                }
+                break;
+            case R.id.availability_cb_3: //thurs
+                if (checked) {
+
+                }
+                break;
+            case R.id.availability_cb_4: // fri
+                if (checked) {
+
+                }
+                break;
+            case R.id.availability_cb_5: // sat
+                if (checked) {
+
+                }
+                break;
+            case R.id.availability_cb_6: // sun
+                if (checked) {
+
+                }
+                break;
+
+            //other
+            case R.id.other_cb_0: // meet home
+                if (checked) {
+
+                }
+                break;
+            case R.id.other_cb_1: // meet public
+                if (checked) {
+
+                }
+                break;
+            case R.id.other_cb_2: // french immersion
+                if (checked) {
+
+                }
+                break;
+            case R.id.other_cb_3: // slow learner
+                if (checked) {
+
+                }
+                break;
+                case R.id.other_cb_4: // ADHD/ADD
+                if (checked) {
+
+                }
+                break;
+            case R.id.other_cb_5: // hearing impaired
+                if (checked) {
+
+                }
+                break;
+            case R.id.other_cb_6: // esl
+                if (checked) {
+
+                }
+                break;
+            case R.id.other_cb_7: // learning disability
+                if (checked) {
+
+                }
+                break;
+        }
     }
 
 
