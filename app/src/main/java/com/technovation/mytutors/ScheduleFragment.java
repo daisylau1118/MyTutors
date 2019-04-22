@@ -97,6 +97,10 @@ public class ScheduleFragment extends Fragment {
                 //changing the info under date to match selected date
                 if (selectedDate.equals("Mon, Apr 22")) //temp-- get booking info from database later
                     dateInfo.setText("• 11:00am: Meet Emma at library");
+                else if ((selectedDate.equals("Fri, Apr 26")))
+                    dateInfo.setText("• 3:00pm: Meeting with John at cafe");
+                else if ((selectedDate.equals("Tue, Apr 30")))
+                    dateInfo.setText("• 6:00pm: Tutoring with Emma at school");
                 else
                     dateInfo.setText("• no events");
 
@@ -110,6 +114,10 @@ public class ScheduleFragment extends Fragment {
             //changing the info under date to match selected date
             if (selectedDate.equals("Mon, Apr 22")) //temp-- get booking info from database later
                 dateInfo.setText("• 11:00am: Meet Emma at library");
+            else if ((selectedDate.equals("Fri, Apr 26")))
+                dateInfo.setText("• 3:00pm: Meeting with John at cafe");
+            else if ((selectedDate.equals("Tue, Apr 30")))
+                dateInfo.setText("• 6:00pm: Tutoring with Emma at school");
             else
                 dateInfo.setText("• no events");
         }
