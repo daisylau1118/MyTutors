@@ -3,10 +3,19 @@ package com.technovation.mytutors;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 /**
@@ -18,6 +27,8 @@ public class ProfileFragment extends Fragment {
     private Button myHistory;
     private Button myRatings;
     private Button savedPeople;
+    private TextView userName;
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -67,6 +78,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        userName = view.findViewById(R.id.userName);
+        // set text to user
 
         return view;
     }

@@ -32,11 +32,16 @@ import static android.support.constraint.Constraints.TAG;
 public class ScheduleFragment extends Fragment {
 
     private Button bookMeeting;
+    private Button edit;
+
     private TextView date;
     private CalendarView calender;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, MMM dd");
     private String selectedDate;
     private Date tempdate;
+
+    private TextView dateInfo;
+    private String description;
 
     public ScheduleFragment() {
         // Required empty public constructor
@@ -48,6 +53,8 @@ public class ScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
+
+        //book meeting button to book meeting fragment
         bookMeeting= view.findViewById(R.id.book_meeting_btn);
         bookMeeting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +63,21 @@ public class ScheduleFragment extends Fragment {
             }
         });
 
+        //edit meeting button to book meeting
+        edit = view.findViewById(R.id.edit_btn);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new BookMeetingFragment(), null).addToBackStack(null).commit();
+            }
+        });
+
+
+
         date = view.findViewById(R.id.date);
         calender = view.findViewById(R.id.calendarView);
 
-        //date.setText(calender.getDate());
-
-        //simpleDateFormat.format(new Date(calender.getDate()));
+        //changing the date to match selected date
         // if user selects another date
         calender.setOnDateChangeListener( new CalendarView.OnDateChangeListener() {
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -84,6 +100,16 @@ public class ScheduleFragment extends Fragment {
             selectedDate = simpleDateFormat.format(new Date(calender.getDate()));
             date.setText(selectedDate);
         }
+
+
+        dateInfo = view.findViewById(R.id.date_info);
+
+
+        //changing the info under date to match selected date
+        if (selectedDate.equals("Sun, Apr 21")) //temp-- get booking info from database later
+            dateInfo.setText("• 11:00am: Meet Emma at library");
+        else
+            dateInfo.setText("• no events");
 
 
 
