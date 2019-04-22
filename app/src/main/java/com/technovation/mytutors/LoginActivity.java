@@ -51,9 +51,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (user != null)
         {
-            mAuth.signOut();
-            //Toast.makeText(this, user.getEmail(),Toast.LENGTH_SHORT).show();
-            //startActivity(new Intent(this,MainActivity.class));
+            //mAuth.signOut();
+            Toast.makeText(this, user.getEmail(),Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this,MainActivity.class));
         }
     }
 

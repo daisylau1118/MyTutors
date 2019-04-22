@@ -40,31 +40,32 @@
             android:layout_marginTop="20dp" />
 
         <TextView
-            android:id="@+id/Date"
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="28dp"
+            android:layout_marginRight="35dp"
             android:layout_marginTop="-10dp"
-            android:text="Saturday, April 20"
+            android:text="Sunday, April 21"
             android:textColor="@color/Black"
             android:textSize="35dp"/>
         <TextView
-            android:id="@+id/DateInfo"
+            android:id="@+id/date_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="• 2:30pm: Meeting with John at library"
+            android:layout_marginLeft="8dp"
+            android:text="• 11:00am: Meeting with Lori Brown"
             android:textColor="@color/Black"
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-145dp"
+            android:layout_marginLeft="-125dp"
             android:layout_marginTop="2dp"
             android:text="Edit"
             android:textColor="@color/NavyBlue"
-            android:textSize="20dp"/>
+            android:textSize="15dp"/>
 
         <Button
             android:id="@+id/book_meeting_btn"

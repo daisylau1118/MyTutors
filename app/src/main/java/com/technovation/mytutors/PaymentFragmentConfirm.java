@@ -25,14 +25,20 @@ public class PaymentFragmentConfirm extends DialogFragment {
         // Required empty public constructor
     }
 
-    public Double payment;
+    private Double payment;
+    private String person;
+    //private String testPayment;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        person = getArguments().getString("person");
+        payment = getArguments().getDouble("payment");
+        //testPayment = getArguments().getString("testPayment");
+
 
         Dialog dialog = new AlertDialog.Builder(getActivity())
-            .setTitle("Make a payment of $"+ payment + " to Emma Smith?")
+            .setTitle("Make a payment of $"+ payment +" to " + person + "?\nYour booking fee is $" +payment*0.01 )
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
