@@ -34,7 +34,7 @@ public class ScheduleFragment extends Fragment {
     private Button bookMeeting;
     private TextView date;
     private CalendarView calender;
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy");
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, MMM dd");
     private String selectedDate;
     private Date tempdate;
 
@@ -68,20 +68,25 @@ public class ScheduleFragment extends Fragment {
 
                 try {
                     // changing year,month,day ints to string then to date
-                    tempdate = new SimpleDateFormat("dd/MM/yyyy").parse(dayOfMonth+ "/"+ month + "/"+ year);
+                    tempdate = new SimpleDateFormat("dd/MM/yyyy").parse(dayOfMonth+ "/"+ (month+1) + "/"+ year);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
                 //changing date back to string in desired format
                 selectedDate = simpleDateFormat.format(tempdate);
+                date.setText(selectedDate);
 
             }//met
         });
         // user stays on current date
-        if (tempdate == null)
+        if (tempdate == null){
             selectedDate = simpleDateFormat.format(new Date(calender.getDate()));
+            date.setText(selectedDate);
+        }
 
-        date.setText(selectedDate);
+
+
+
 
 
         return view;

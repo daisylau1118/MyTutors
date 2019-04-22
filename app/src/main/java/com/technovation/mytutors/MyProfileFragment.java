@@ -40,6 +40,7 @@ public class MyProfileFragment extends Fragment {
             }
         });
 
+        // logout button -- need to fix changing to login activity
         logout = view.findViewById(R.id.logout_btn);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
