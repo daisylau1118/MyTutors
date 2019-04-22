@@ -68,6 +68,7 @@ public class ScheduleFragment extends Fragment {
 
                 try {
                     // changing year,month,day ints to string then to date
+                    // for some reason month is one less than it's supposed to be?? so I added one to show the correct month
                     tempdate = new SimpleDateFormat("dd/MM/yyyy").parse(dayOfMonth+ "/"+ (month+1) + "/"+ year);
                 } catch (ParseException e) {
                     e.printStackTrace();
