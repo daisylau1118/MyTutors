@@ -82,9 +82,11 @@
             android:layout_toRightOf="@id/userProfilePic"
             android:isIndicator="true"
             android:numStars="5"
-            android:rating="4"
+            android:rating="4.5"
             android:scaleX=".9"
-            android:scaleY=".9" />
+            android:scaleY=".9"
+
+            />
 
     </RelativeLayout>
 
@@ -100,7 +102,8 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfile"
+        />
 
     <Button
         android:id="@+id/edit_pref_btn"
@@ -116,5 +119,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editBio" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="120dp"
+        android:background="@color/Grey"
+        android:text="Log Out"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pref_btn" />
+
+    <!--<TextView-->
+        android:id="@+id/textView2"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:text="Works with: Math, Physics, Meeting in Public, Slow Learners"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfile" />
+
+    <!--<TextView-->
+        android:id="@+id/textView3"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:text="Availability: Wednesday, Friday, Sunday"
+        android:textSize="20sp"
+        android:textColor="@color/Black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <!--<TextView-->
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Rate: $35/hour Note: A fee of 5% will be deducted from your rate every booking"
+        android:textSize="20sp"
+        android:textColor="@color/Black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
 
 </android.support.constraint.ConstraintLayout>

@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:layout_marginTop="15dp"
-                    android:text="Rate: $30/hour"
+                    android:text="Rate: $35/hour"
                     android:textSize="20sp" />
 
 

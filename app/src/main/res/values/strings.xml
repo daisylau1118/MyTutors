@@ -31,12 +31,12 @@
     </string-array>
 
     <string-array name="MyRatings">
-        <item>Emma Smith,pic2,review1,5</item>
-        <item>Lily Owen,pic7,review2,4.5</item>
-        <item>Shanelle Hoffman,pic9,review3,4</item>
-        <item>Vivienne Corrigan,pic11,review4,4.5</item>
-        <item>Cherie Akhtar,pic12,review5,3.5</item>
-        <item>Mat Horton,pic15,review7,4</item>
+        <item>Lori Brown,pic2,She was very good at explaining concepts and was very patient! :),5</item>
+        <item>Sarah Miller,pic7,She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she is patient.,5</item>
+        <item>Cherie Akhtar,pic12,I felt like she was very understanding and she helped me a lot with remembering terms and formulas.,4.5</item>
+        <!--<item>Vivienne Corrigan,pic11,review4,4.5</item>-->
+        <item>Shanelle Hoffman,pic9,Emma helped improve my grade a lot. The way she explains things is very good.,4</item>
+        <item>Mat Horton,pic15,My math skills have improved a lot and I owe it all to Emma. She has helped me understand so many things that I could not understand in class. ,5</item>
     </string-array>
 
     <string-array name="savedPeople">
@@ -53,7 +53,9 @@
 
     <string-array name="History">
         <item>Emma Smith,pic2,4.5</item>
-        <item>Lily Owen,pic7,4</item>
+        <!--<item>Lori Smith,pic3,5</item>-->
+        <!--<item>Sarah Miller,pic7,5</item>-->
+        <item>Shanelle Hoffman,pic9,4</item>
         <item>Cherie Akhtar,pic12,4</item>
         <item>Mat Horton,pic14,5</item>
     </string-array>
@@ -65,7 +67,7 @@
     <string name="booking_date">April 14, 2019</string>
     <string name="booking_time">3:30 pm</string>
 
-    <string name="chatting_name">Emma Smith</string>
+    <string name="chatting_name">Lori Brown</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

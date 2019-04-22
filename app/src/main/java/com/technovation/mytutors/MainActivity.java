@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         fragmentManager = getSupportFragmentManager();
 
         if (findViewById(R.id.FragmentContainer)!=null)
@@ -55,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
             }
             FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
 
-            HomepageFragment homepageFragment = new HomepageFragment();
+            //HomepageFragment homepageFragment = new HomepageFragment();
+           HomepageFragment homepageFragment = new HomepageFragment();
 
+            //fragmentTransaction.add(R.id.FragmentContainer, homepageFragment, null);
             fragmentTransaction.add(R.id.FragmentContainer, homepageFragment, null);
             fragmentTransaction.commit();
         }

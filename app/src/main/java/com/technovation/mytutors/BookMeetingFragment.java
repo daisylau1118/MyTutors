@@ -14,8 +14,11 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -29,8 +32,9 @@ public class BookMeetingFragment extends Fragment implements View.OnClickListene
     private EditText editPerson;
     private EditText editTime;
     private CalendarView editDate;
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy");
     private String selectedDate;
+    private Date tempdate;
 
 
 
@@ -58,8 +62,24 @@ public class BookMeetingFragment extends Fragment implements View.OnClickListene
         editTime = view.findViewById(R.id.editTime);
         editDate = view.findViewById(R.id.calendarView);
 
-        selectedDate = simpleDateFormat.format(new Date(editDate.getDate()));
+        // if user selects another date
+        editDate.setOnDateChangeListener( new CalendarView.OnDateChangeListener() {
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
 
+                try {
+                    // changing year,month,day ints to string then to date
+                    tempdate = new SimpleDateFormat("dd/MM/yyyy").parse(dayOfMonth+ "/"+ month + "/"+ year);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                //changing date back to string in desired format
+                selectedDate = simpleDateFormat.format(tempdate);
+
+            }//met
+        });
+        // user stays on current date
+        if (tempdate == null)
+            selectedDate = simpleDateFormat.format(new Date(editDate.getDate()));
 
         return view;
     }

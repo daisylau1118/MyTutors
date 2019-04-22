@@ -113,13 +113,13 @@
             app:layout_constraintTop_toBottomOf="@+id/paymentConfirm" />
 
         <EditText
-            android:id="@+id/editPrice"
+            android:id="@+id/editPayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:ems="12"
+            android:ems="13"
             android:hint="$"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -187,7 +187,7 @@
             android:background="@color/Grey"
             android:text="Confirm"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/bookingfee_msg" />
 
         <Button
             android:id="@+id/book_meeting_btn"
@@ -198,7 +198,19 @@
             android:background="@color/Grey"
             android:text="Book a Meeting"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/bookingfee_msg" />
+
+        <TextView
+            android:id="@+id/bookingfee_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:paddingBottom="10dp"
+            android:text="Note: an 1% booking fee on top of payment to the tutor will be added automatically"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPayment" />
 
 
     </android.support.constraint.ConstraintLayout>
