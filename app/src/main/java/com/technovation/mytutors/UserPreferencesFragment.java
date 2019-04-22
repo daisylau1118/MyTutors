@@ -6,12 +6,22 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class UserPreferencesFragment extends Fragment {
+
+    private CheckBox subject0;
+    private CheckBox subject1;
+    private CheckBox subject2;
+    private CheckBox subject3;
+    private CheckBox subject4;
+
+
+
 
 
     public UserPreferencesFragment() {
