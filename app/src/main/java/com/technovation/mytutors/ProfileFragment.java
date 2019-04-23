@@ -37,7 +37,7 @@ public class ProfileFragment extends Fragment {
     private TextView userName;
     private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     private DatabaseReference mDatabase;
-    private FirebaseFirestore db;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String TAG = "DocSnippets";
 
 
@@ -102,7 +102,7 @@ public class ProfileFragment extends Fragment {
 //            public void onCancelled(DatabaseError databaseError) {
 //            }
 //        });
-        /*
+
         DocumentReference docRef = db.collection("users").document("currentUser.getUid()");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -120,7 +120,7 @@ public class ProfileFragment extends Fragment {
                 }
             }
         });
-        */
+
 
 
 
