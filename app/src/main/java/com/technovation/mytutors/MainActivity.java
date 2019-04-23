@@ -9,44 +9,29 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
 
     public static FragmentManager fragmentManager;
-
-    /*
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.homeButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new HomepageFragment(), null).addToBackStack(null).commit();
-                    return true;
-                case R.id.calendarButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ScheduleFragment(), null).addToBackStack(null).commit();
-                    return true;
-                case R.id.profileButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ProfileFragment(), null).addToBackStack(null).commit();
-                    return true;
-                case R.id.chatButtonBottomBar:
-                    MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MessagesFragment(), null).addToBackStack(null).commit();
-                    return true;
-            }
-            return false;
-        }
-    };
-    */
+    private FirebaseFirestore db;
+    private DatabaseReference mDatabase;
+    private String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 
         fragmentManager = getSupportFragmentManager();
 
@@ -66,11 +51,6 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
 
-        //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-        //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        ///*
-
         // changing fragment to schedule if calender icon on bottom bar is clicked
         ImageButton scheduleButton = (ImageButton)findViewById(R.id.calendarButtonBottomBar);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ScheduleFragment(), null).addToBackStack(null).commit();
                 }
             });
-
-
         // changing fragment to profile if profile icon on bottom bar is clicked
         ImageButton profileButton = (ImageButton)findViewById(R.id.profileButtonBottomBar);
         profileButton.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ProfileFragment(), null).addToBackStack(null).commit();
             }
         });
-
         // changing fragment to home if home icon on bottom bar is clicked
         ImageButton homeButton = (ImageButton)findViewById(R.id.homeButtonBottomBar);
         homeButton.setOnClickListener(new View.OnClickListener() {
@@ -108,27 +85,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //*/
-
+        mDatabase = FirebaseDatabase.getInstance().getReference("users");
     }
 
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
 
+        //DocumentReference user = db.document("/users/" +currentUser );
+
         // Check which checkbox was clicked
         switch(view.getId()) {
             //subject
             case R.id.subject_cb_0: //math
                 if (checked) {
-                    //math = true;
                     Toast.makeText(this, "math", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.subject_cb_1: //ela
                 if (checked) {
-                    Toast.makeText(this, "ela", Toast.LENGTH_SHORT).show();
+                    //CollectionReference users = db.collection("/users");
+                    //Map<String, Boolean> data = new HashMap<>();
+                    //data.put("ela", true);
+                    //user.set(data); // make sure uid matches document id
                 }
+
                 break;
             case R.id.subject_cb_2://language
                 if (checked) {
