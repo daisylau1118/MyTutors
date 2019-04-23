@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         db.collection("tutors").document(currentUser).set(data); // makes
                     } else
                         db.collection("tutors").document(currentUser).update("isTutor", false);
+
                 break;
             //subject
             case R.id.subject_cb_0: //math

@@ -110,8 +110,140 @@ public class UserPreferencesFragment extends Fragment {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if (documentSnapshot.exists()){
-                            //String name = documentSnapshot.getString("first_name");
-                            //Toast.makeText(getContext(),name,Toast.LENGTH_SHORT).show();
+                            //subject
+                            if (documentSnapshot.getBoolean("subject.math")!=null){
+                                Boolean math = documentSnapshot.getBoolean("subject.math");
+                                if (math)
+                                    subject0.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("subject.ela")!=null){
+                                Boolean ela = documentSnapshot.getBoolean("subject.ela");
+                                if (ela)
+                                    subject1.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("subject.social")!=null){
+                                Boolean social = documentSnapshot.getBoolean("subject.social");
+                                if (social)
+                                    subject2.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("subject.languages")!=null){
+                                Boolean languages = documentSnapshot.getBoolean("subject.languages");
+                                if (languages)
+                                    subject3.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("subject.science")!=null){
+                                Boolean science = documentSnapshot.getBoolean("subject.science");
+                                if (science)
+                                    subject4.setChecked(true);
+                            }
+
+                            //level
+                            if (documentSnapshot.getBoolean("level.elementary")!=null){
+                                Boolean elementary = documentSnapshot.getBoolean("level.elementary");
+                                if (elementary)
+                                    level0.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("level.junior")!=null){
+                                Boolean junior = documentSnapshot.getBoolean("level.junior");
+                                if (junior)
+                                    level1.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("level.senior")!=null){
+                                Boolean senior = documentSnapshot.getBoolean("level.senior");
+                                if (senior)
+                                    level2.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("level.post_secondary")!=null){
+                                Boolean postSec = documentSnapshot.getBoolean("level.post_secondary");
+                                if (postSec)
+                                    level3.setChecked(true);
+                            }
+
+                            //availability
+                            if (documentSnapshot.getBoolean("availability.monday")!=null){
+                                Boolean mon = documentSnapshot.getBoolean("availability.monday");
+                                if (mon)
+                                    availability0.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("availability.tuesday")!=null){
+                                Boolean tues = documentSnapshot.getBoolean("availability.tuesday");
+                                if (tues)
+                                    availability1.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("availability.wednesday")!=null){
+                                Boolean wed = documentSnapshot.getBoolean("availability.wednesday");
+                                if (wed)
+                                    availability2.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("availability.thursday")!=null){
+                                Boolean thurs = documentSnapshot.getBoolean("availability.thursday");
+                                if (thurs)
+                                    availability3.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("availability.friday")!=null){
+                                Boolean fri = documentSnapshot.getBoolean("availability.friday");
+                                if (fri)
+                                    availability4.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("availability.saturday")!=null){
+                                Boolean sat = documentSnapshot.getBoolean("availability.saturday");
+                                if (sat)
+                                    availability5.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("availability.sunday")!=null){
+                                Boolean sun = documentSnapshot.getBoolean("availability.sunday");
+                                if (sun)
+                                    availability6.setChecked(true);
+                            }
+
+                            //other
+                            if (documentSnapshot.getBoolean("other.meet_at_home")!=null){
+                                Boolean meethome = documentSnapshot.getBoolean("other.meet_at_home");
+                                if (meethome)
+                                    other0.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.meet_in_public")!=null){
+                                Boolean meetpublic = documentSnapshot.getBoolean("other.meet_in_public");
+                                if (meetpublic)
+                                    other1.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.french_immersion")!=null){
+                                Boolean frenchIm = documentSnapshot.getBoolean("other.french_immersion");
+                                if (frenchIm)
+                                    other2.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.slow_learner")!=null){
+                                Boolean slowLearner = documentSnapshot.getBoolean("other.slow_learner");
+                                if (slowLearner)
+                                    other3.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.adhd_add")!=null){
+                                Boolean adhd = documentSnapshot.getBoolean("other.adhd_add");
+                                if (adhd)
+                                    other4.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.hearing_impaired")!=null){
+                                Boolean hearing = documentSnapshot.getBoolean("other.hearing_impaired");
+                                if (hearing)
+                                    other5.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.english_second_language")!=null){
+                                Boolean esl = documentSnapshot.getBoolean("other.english_second_language");
+                                if (esl)
+                                    other6.setChecked(true);
+                            }
+                            if (documentSnapshot.getBoolean("other.learning disability")!=null){
+                                Boolean learnDisb = documentSnapshot.getBoolean("other.learning disability");
+                                if (learnDisb)
+                                    other7.setChecked(true);
+                            }
+
+
+
+
+
+
+
                         }
                         else{
                             Toast.makeText(getContext(),"document does not exist",Toast.LENGTH_SHORT).show();
