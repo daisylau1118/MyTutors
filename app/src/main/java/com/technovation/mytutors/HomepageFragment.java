@@ -4,6 +4,7 @@ package com.technovation.mytutors;
 import android.media.MediaDrm;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,11 +24,11 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.w3c.dom.Document;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import javax.annotation.Nullable;
 
 import static android.content.ContentValues.TAG;
 
@@ -53,57 +54,19 @@ public class HomepageFragment extends Fragment implements OnCompleteListener<Que
         // Required empty public constructor
     }
 
-    /*@Override
-    public void onCreate (@Nullable Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-
-
-    }*/
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState){
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_homepage, container, false);
         db = FirebaseFirestore.getInstance();
 
-        searchFilteredUserID = new ArrayList<>();
         db.collection("tutors")
                 .whereEqualTo("availability.monday", true)
                 .get()
                 .addOnCompleteListener(this);
 
-        for (String uid: searchFilteredUserID)
-        {
-            db.collection("users").document(uid).addSnapshotListener(new EventListener<DocumentSnapshot>()
-            {
-                @Override
-                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e)
-                {
-                   if (e != null)
-                   {
-                       Log.d(TAG, "Listened failed.", e);
-                       return;
-                   }
-
-                   if (documentSnapshot != null && documentSnapshot.exists())
-                   {
-                       Log.d(TAG, "Name: " + documentSnapshot.getString("first_name") + documentSnapshot.getString("last_name"));
-                   }
-                   else
-                   {
-                       Log.d(TAG, "No data");
-                   }
-                }
-            });
-        }
-
         /*
-
-
-
-
         // changing fragment to settings if settings is clicked
         settings= view.findViewById(R.id.settingsButton);
         settings.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +76,6 @@ public class HomepageFragment extends Fragment implements OnCompleteListener<Que
             }
         });
         */
-
 
         list = Arrays.asList(getResources().getStringArray(R.array.users));
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -125,39 +87,50 @@ public class HomepageFragment extends Fragment implements OnCompleteListener<Que
         recyclerView.setHasFixedSize(true);
 
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(
-                                                getContext(),
-                                                recyclerView,
-                                                new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new ViewProfileFragment(), null).addToBackStack(null).commit();
-            }
+                getContext(),
+                recyclerView,
+                new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer, new ViewProfileFragment(), null).addToBackStack(null).commit();
+                    }
 
-            @Override
-            public void onLongItemClick(View view, int position) {
-
-            }
-
-
-
-        }));
+                    @Override
+                    public void onLongItemClick(View view, int position) { }
+                }));
 
         return view;
     }
 
     @Override
-    public void onComplete(@NonNull Task<QuerySnapshot> task)
-    {
-        if (task.isSuccessful())
-        {
-            for (QueryDocumentSnapshot document: task.getResult())
-            {
-                searchFilteredUserID.add(document.getId());
-                Log.d(TAG,"Firebase User: " + searchFilteredUserID);
+    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+        list = new ArrayList<>();
+
+        if (task.isSuccessful()) {
+            for (QueryDocumentSnapshot document : task.getResult()) {
+                document.getDocumentReference("user")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot data = task.getResult();
+                                    String firstName = data.getString("first_name");
+                                    String lastName = data.getString("last_name");
+                                    if (firstName != null && lastName != null) {
+                                        list.add(firstName + " " + lastName + ",pic1,4.5");
+                                        Log.d("Firebase", "Firebase Username: " + data.getString("first_name"));
+
+                                        recyclerAdaper.setList(list);
+                                        recyclerAdaper.notifyDataSetChanged();
+                                    }
+
+                                }
+                            }
+                        });
             }
-        }else
-        {
-            Log.d(TAG,"Error getting document: ", task.getException());
+        } else {
+            Log.d("Firebase", "Error getting document: ", task.getException());
         }
     }
 }
