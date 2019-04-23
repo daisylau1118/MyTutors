@@ -93,160 +93,169 @@ public class MainActivity extends AppCompatActivity {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
 
-        CollectionReference user = db.collection("users");
+        CollectionReference users = db.collection("users");
 
         // Check which checkbox was clicked
         switch(view.getId()) {
+
+            case R.id.tutor_cb:
+                    if (checked) {
+                        Map<String, Object> data = new HashMap<>();
+                        data.put("isTutor", true);
+                        db.collection("tutors").document(currentUser).set(data); // makes
+                    } else
+                        db.collection("tutors").document(currentUser).update("isTutor", false);
+                break;
             //subject
             case R.id.subject_cb_0: //math
                 if (checked)
-                    user.document(currentUser).update("subject.math", true);
+                    users.document(currentUser).update("subject.math", true);
                 else
-                    user.document(currentUser).update("subject.math", false);
+                    users.document(currentUser).update("subject.math", false);
                 break;
             case R.id.subject_cb_1: //ela
                 if (checked)
-                    user.document(currentUser).update("subject.ela", true);
+                    users.document(currentUser).update("subject.ela", true);
                 else
-                    user.document(currentUser).update("subject.ela", false);
+                    users.document(currentUser).update("subject.ela", false);
                 break;
             case R.id.subject_cb_2://language
                 if (checked)
-                    user.document(currentUser).update("subject.languages", true);
+                    users.document(currentUser).update("subject.languages", true);
                 else
-                    user.document(currentUser).update("subject.languages", false);
+                    users.document(currentUser).update("subject.languages", false);
                 break;
             case R.id.subject_cb_3: //social
                 if (checked)
-                    user.document(currentUser).update("subject.social", true);
+                    users.document(currentUser).update("subject.social", true);
                 else
-                    user.document(currentUser).update("subject.social", false);
+                    users.document(currentUser).update("subject.social", false);
                 break;
             case R.id.subject_cb_4:// science
                 if (checked)
-                    user.document(currentUser).update("subject.science", true);
+                    users.document(currentUser).update("subject.science", true);
                 else
-                    user.document(currentUser).update("subject.science", false);
+                    users.document(currentUser).update("subject.science", false);
                 break;
 
             //level
             case R.id.level_cb_0: //elementary
                 if (checked)
-                    user.document(currentUser).update("level.elementary", true);
+                    users.document(currentUser).update("level.elementary", true);
                 else
-                    user.document(currentUser).update("level.elementary", false);
+                    users.document(currentUser).update("level.elementary", false);
                 break;
             case R.id.level_cb_1: // junior high
                 if (checked)
-                    user.document(currentUser).update("level.junior", true);
+                    users.document(currentUser).update("level.junior", true);
                 else
-                    user.document(currentUser).update("level.junior", false);
+                    users.document(currentUser).update("level.junior", false);
                 break;
             case R.id.level_cb_2: // high school
                 if (checked)
-                    user.document(currentUser).update("level.senior", true);
+                    users.document(currentUser).update("level.senior", true);
                 else
-                    user.document(currentUser).update("level.senior", false);
+                    users.document(currentUser).update("level.senior", false);
                 break;
             case R.id.level_cb_3: // post secondary
                 if (checked)
-                    user.document(currentUser).update("level.post_secondary", true);
+                    users.document(currentUser).update("level.post_secondary", true);
                 else
-                    user.document(currentUser).update("level.post_secondary", false);
+                    users.document(currentUser).update("level.post_secondary", false);
                 break;
 
             //availability
             case R.id.availability_cb_0: // mon
                 if (checked)
-                    user.document(currentUser).update("availability.monday", true);
+                    users.document(currentUser).update("availability.monday", true);
                 else
-                    user.document(currentUser).update("availability.monday", false);
+                    users.document(currentUser).update("availability.monday", false);
                 break;
             case R.id.availability_cb_1: // tues
                 if (checked)
-                    user.document(currentUser).update("availability.tuesday", true);
+                    users.document(currentUser).update("availability.tuesday", true);
                 else
-                    user.document(currentUser).update("availability.tuesday", false);
+                    users.document(currentUser).update("availability.tuesday", false);
                 break;
             case R.id.availability_cb_2: //wed
                 if (checked)
-                    user.document(currentUser).update("availability.wednesday", true);
+                    users.document(currentUser).update("availability.wednesday", true);
                 else
-                    user.document(currentUser).update("availability.wednesday", false);
+                    users.document(currentUser).update("availability.wednesday", false);
                 break;
             case R.id.availability_cb_3: //thurs
                 if (checked)
-                    user.document(currentUser).update("availability.thursday", true);
+                    users.document(currentUser).update("availability.thursday", true);
                 else
-                    user.document(currentUser).update("availability.thursday", false);
+                    users.document(currentUser).update("availability.thursday", false);
                 break;
             case R.id.availability_cb_4: // fri
                 if (checked)
-                    user.document(currentUser).update("availability.friday", true);
+                    users.document(currentUser).update("availability.friday", true);
                 else
-                    user.document(currentUser).update("availability.friday", false);
+                    users.document(currentUser).update("availability.friday", false);
                 break;
             case R.id.availability_cb_5: // sat
                 if (checked)
-                    user.document(currentUser).update("availability.saturday", true);
+                    users.document(currentUser).update("availability.saturday", true);
                 else
-                    user.document(currentUser).update("availability.saturday", false);
+                    users.document(currentUser).update("availability.saturday", false);
                 break;
             case R.id.availability_cb_6: // sun
                 if (checked)
-                    user.document(currentUser).update("availability.sunday", true);
+                    users.document(currentUser).update("availability.sunday", true);
                 else
-                    user.document(currentUser).update("availability.sunday", false);
+                    users.document(currentUser).update("availability.sunday", false);
                 break;
 
             //other
             case R.id.other_cb_0: // meet home
                 if (checked)
-                    user.document(currentUser).update("other.meet_at_home", true);
+                    users.document(currentUser).update("other.meet_at_home", true);
                 else
-                    user.document(currentUser).update("other.meet_at_home", false);
+                    users.document(currentUser).update("other.meet_at_home", false);
                 break;
             case R.id.other_cb_1: // meet public
                 if (checked)
-                    user.document(currentUser).update("other.meet_in_public", true);
+                    users.document(currentUser).update("other.meet_in_public", true);
                 else
-                    user.document(currentUser).update("other.meet_in_public", false);
+                    users.document(currentUser).update("other.meet_in_public", false);
                 break;
             case R.id.other_cb_2: // french immersion
                 if (checked)
-                    user.document(currentUser).update("other.french_immersion", true);
+                    users.document(currentUser).update("other.french_immersion", true);
                 else
-                    user.document(currentUser).update("other.french_immersion", false);
+                    users.document(currentUser).update("other.french_immersion", false);
                 break;
             case R.id.other_cb_3: // slow learner
                 if (checked)
-                    user.document(currentUser).update("other.slow_learner", true);
+                    users.document(currentUser).update("other.slow_learner", true);
                 else
-                    user.document(currentUser).update("other.slow_learner", false);
+                    users.document(currentUser).update("other.slow_learner", false);
                 break;
-                case R.id.other_cb_4: // ADHD/ADD
-                    if (checked)
-                        user.document(currentUser).update("other.adhd/add", true);
-                    else
-                        user.document(currentUser).update("other.adhd/add", false);
-                break;
+            case R.id.other_cb_4: // ADHD/ADD
+                if (checked)
+                    users.document(currentUser).update("other.adhd_add", true);
+                else
+                    users.document(currentUser).update("other.adhd_add", false);
+            break;
             case R.id.other_cb_5: // hearing impaired
                 if (checked)
-                    user.document(currentUser).update("other.hearing_impaired", true);
+                    users.document(currentUser).update("other.hearing_impaired", true);
                 else
-                    user.document(currentUser).update("other.hearing_impaired", false);
+                    users.document(currentUser).update("other.hearing_impaired", false);
                 break;
             case R.id.other_cb_6: // esl
                 if (checked)
-                    user.document(currentUser).update("other.english_second_language", true);
+                    users.document(currentUser).update("other.english_second_language", true);
                 else
-                    user.document(currentUser).update("other.english_second_language", false);
+                    users.document(currentUser).update("other.english_second_language", false);
                 break;
             case R.id.other_cb_7: // learning disability
                 if (checked)
-                    user.document(currentUser).update("other.learning disability", true);
+                    users.document(currentUser).update("other.learning disability", true);
                 else
-                    user.document(currentUser).update("other.learning disability", false);
+                    users.document(currentUser).update("other.learning disability", false);
                 break;
         }
     }
