@@ -18,17 +18,6 @@
         <item>Mica Fox,pic15,3.5</item>
     </string-array>
 
-    <string-array name="TutorRatings">
-        <item>Tara S.,pic1,review1</item>
-        <item>John K.,pic2,review2</item>
-        <item>Lea E.,pic3,review3</item>
-        <item>Beth L.,pic4,review4</item>
-        <item>Sara H.,pic5,review5</item>
-        <item>Kathy I.,pic6,review6</item>
-        <item>Ken W.,pic7,review7</item>
-        <item>Nial O.,pic8,review8</item>
-    </string-array>
-
     <string-array name="MyRatings">
         <item>Lori Brown,pic2,She was very good at explaining concepts and was very patient! :),5</item>
         <item>Sarah Miller,pic7,She was amazing in helping me get over a 95 in math for grade 9. She fits my learning style perfectly and she is patient.,5</item>

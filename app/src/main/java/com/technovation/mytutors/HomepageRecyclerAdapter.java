@@ -19,7 +19,7 @@ public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecycl
     private List<String>list;
 
 
-    public HomepageRecyclerAdapter(List<String>list){
+    public HomepageRecyclerAdapter(List<String> list){
         this.list = list;
     }
 
@@ -53,6 +53,10 @@ public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecycl
 
     }
 
+    public void setList(List<String> newList) {
+        list = newList;
+    }
+
     public static class myViewHolder extends RecyclerView.ViewHolder {
 
         private RelativeLayout profileView;
@@ -66,7 +70,6 @@ public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecycl
             this.textView = this.profileView.findViewById(R.id.profileName);
             this.imageView = this.profileView.findViewById(R.id.profilePic);
             this.ratingBar = this.profileView.findViewById(R.id.ratingBar);
-
         }
     }
 

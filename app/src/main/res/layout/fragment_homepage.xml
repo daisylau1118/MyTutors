@@ -9,7 +9,7 @@
     tools:context=".HomepageFragment">
 
     <EditText
-        android:id="@+id/searchbar"
+        android:id="@+id/searchBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -31,8 +31,8 @@
         android:background="@color/Transparent"
         android:scaleX="1.6"
         android:scaleY="1.6"
-        app:layout_constraintBottom_toBottomOf="@+id/searchbar"
-        app:layout_constraintStart_toEndOf="@+id/searchbar"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBar"
+        app:layout_constraintStart_toEndOf="@+id/searchBar"
         app:srcCompat="@drawable/settings" />
 
     <android.support.v7.widget.RecyclerView
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchbar" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 
 
 
