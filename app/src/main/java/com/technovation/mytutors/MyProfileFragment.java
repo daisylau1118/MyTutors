@@ -76,7 +76,7 @@ public class MyProfileFragment extends Fragment {
 
                         }
                         else{
-                            Toast.makeText(getContext(),"document does not exist",Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(),"document does not exist",Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -84,7 +84,7 @@ public class MyProfileFragment extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(),"failure to read document",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(),"failure to read document",Toast.LENGTH_SHORT).show();
                     }
                 });
 

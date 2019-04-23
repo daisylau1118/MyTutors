@@ -17,13 +17,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener, OnCompleteListener<AuthResult>
 {
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    private String currentUser;
 
     private Button btnNextScreen;
-    private EditText etName, etEmail, etPassword, etRetypePassword;
+    private EditText etFirstName, etLastName, etEmail, etPassword, etRetypePassword;
 
     @Override
     public void onCreate (@Nullable Bundle savedInstanceState)
@@ -32,11 +36,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_signup);
 
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
 
         btnNextScreen = findViewById(R.id.btn_sign_up_to_main);
         btnNextScreen.setOnClickListener(this);
 
-        etName = findViewById(R.id.et_name);
+        etFirstName = findViewById(R.id.et_first_name);
+        etLastName = findViewById(R.id.et_last_name);
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         etRetypePassword = findViewById(R.id.et_retype_password);
@@ -44,18 +51,24 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     public void onClick (View v)
     {
-        String name = etName.getText().toString();
+        String firstName = etFirstName.getText().toString();
+        String lastName = etLastName.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         String retype_password = etRetypePassword.getText().toString();
+        CollectionReference users = db.collection("users");
 
-        if (!name.isEmpty()
+        if (!firstName.isEmpty()
+            && !lastName.isEmpty()
             && !password.isEmpty()
             && Patterns.EMAIL_ADDRESS.matcher(email).matches()
             && password.equals(retype_password))
         {
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(this, this);
+
+            /*users.document(currentUser).update("first_name", firstName);
+            users.document(currentUser).update("last_name", lastName);*/
         }
     }
 
