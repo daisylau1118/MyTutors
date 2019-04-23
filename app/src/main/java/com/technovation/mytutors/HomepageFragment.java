@@ -1,7 +1,6 @@
 package com.technovation.mytutors;
 
 
-import android.media.MediaDrm;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,13 +23,10 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.w3c.dom.Document;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static android.content.ContentValues.TAG;
 
 
 /**

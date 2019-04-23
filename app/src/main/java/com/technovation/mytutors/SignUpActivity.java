@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
 
     private Button btnNextScreen;
-    private EditText etName, etEmail, etPassword, etRetypePassword;
+    private EditText etFirstName, etLastName, etEmail, etPassword, etRetypePassword;
 
     @Override
     public void onCreate (@Nullable Bundle savedInstanceState)
@@ -36,7 +36,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnNextScreen = findViewById(R.id.btn_sign_up_to_main);
         btnNextScreen.setOnClickListener(this);
 
-        etName = findViewById(R.id.et_name);
+        etFirstName = findViewById(R.id.et_first_name);
+        etLastName = findViewById(R.id.et_last_name);
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         etRetypePassword = findViewById(R.id.et_retype_password);
@@ -44,12 +45,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     public void onClick (View v)
     {
-        String name = etName.getText().toString();
+        String firstName = etFirstName.getText().toString();
+        String lastName = etLastName.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         String retype_password = etRetypePassword.getText().toString();
 
-        if (!name.isEmpty()
+        if (!firstName.isEmpty()
+            && !lastName.isEmpty()
             && !password.isEmpty()
             && Patterns.EMAIL_ADDRESS.matcher(email).matches()
             && password.equals(retype_password))
