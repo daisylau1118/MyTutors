@@ -17,10 +17,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener, OnCompleteListener<AuthResult>
 {
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    private String currentUser;
 
     private Button btnNextScreen;
     private EditText etFirstName, etLastName, etEmail, etPassword, etRetypePassword;
@@ -32,6 +36,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_signup);
 
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
 
         btnNextScreen = findViewById(R.id.btn_sign_up_to_main);
         btnNextScreen.setOnClickListener(this);
@@ -50,6 +56,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         String retype_password = etRetypePassword.getText().toString();
+        CollectionReference users = db.collection("users");
 
         if (!firstName.isEmpty()
             && !lastName.isEmpty()
@@ -59,6 +66,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         {
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(this, this);
+
+            /*users.document(currentUser).update("first_name", firstName);
+            users.document(currentUser).update("last_name", lastName);*/
         }
     }
 
