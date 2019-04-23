@@ -158,45 +158,45 @@ public class MainActivity extends AppCompatActivity {
             //availability
             case R.id.availability_cb_0: // mon
                 if (checked)
-                    user.document(currentUser).update("availability_monday", true);
+                    user.document(currentUser).update("availability.monday", true);
                 else
-                    user.document(currentUser).update("availability_monday", false);
+                    user.document(currentUser).update("availability.monday", false);
                 break;
             case R.id.availability_cb_1: // tues
                 if (checked)
-                    user.document(currentUser).update("availability_tuesday", true);
+                    user.document(currentUser).update("availability.tuesday", true);
                 else
-                    user.document(currentUser).update("availability_tuesday", false);
+                    user.document(currentUser).update("availability.tuesday", false);
                 break;
             case R.id.availability_cb_2: //wed
                 if (checked)
-                    user.document(currentUser).update("availability_wednesday", true);
+                    user.document(currentUser).update("availability.wednesday", true);
                 else
-                    user.document(currentUser).update("availability_wednesday", false);
+                    user.document(currentUser).update("availability.wednesday", false);
                 break;
             case R.id.availability_cb_3: //thurs
                 if (checked)
-                    user.document(currentUser).update("availability_thursday", true);
+                    user.document(currentUser).update("availability.thursday", true);
                 else
-                    user.document(currentUser).update("availability_thursday", false);
+                    user.document(currentUser).update("availability.thursday", false);
                 break;
             case R.id.availability_cb_4: // fri
                 if (checked)
-                    user.document(currentUser).update("availability_friday", true);
+                    user.document(currentUser).update("availability.friday", true);
                 else
-                    user.document(currentUser).update("availability_friday", false);
+                    user.document(currentUser).update("availability.friday", false);
                 break;
             case R.id.availability_cb_5: // sat
                 if (checked)
-                    user.document(currentUser).update("availability_saturday", true);
+                    user.document(currentUser).update("availability.saturday", true);
                 else
-                    user.document(currentUser).update("availability_saturday", false);
+                    user.document(currentUser).update("availability.saturday", false);
                 break;
             case R.id.availability_cb_6: // sun
                 if (checked)
-                    user.document(currentUser).update("availability_sunday", true);
+                    user.document(currentUser).update("availability.sunday", true);
                 else
-                    user.document(currentUser).update("availability_sunday", false);
+                    user.document(currentUser).update("availability.sunday", false);
                 break;
 
             //other

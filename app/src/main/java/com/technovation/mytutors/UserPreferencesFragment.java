@@ -50,7 +50,7 @@ public class UserPreferencesFragment extends Fragment {
     private CheckBox other5; // hearing
     private CheckBox other6; // esl
     private CheckBox other7; // learning disability
-    
+
 
     public UserPreferencesFragment() {
         // Required empty public constructor
