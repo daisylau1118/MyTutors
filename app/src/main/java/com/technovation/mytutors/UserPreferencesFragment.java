@@ -1,17 +1,27 @@
 package com.technovation.mytutors;
 
 
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.OnLifecycleEvent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -22,6 +32,10 @@ import java.util.Map;
  * A simple {@link Fragment} subclass.
  */
 public class UserPreferencesFragment extends Fragment {
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
+    private DocumentReference prefRef = db.collection("users").document(currentUser);
 
     private CheckBox subject0; // math
     private CheckBox subject1; // ela
@@ -91,9 +105,31 @@ public class UserPreferencesFragment extends Fragment {
         other6 = view.findViewById(R.id.other_cb_6);
         other7 = view.findViewById(R.id.other_cb_7);
 
+        prefRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            //String name = documentSnapshot.getString("first_name");
+                            //Toast.makeText(getContext(),name,Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(getContext(),"document does not exist",Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"failure to read document",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
         return view;
 
     }
+
 
     public void onCheckboxClicked(View view) {
         //found in main activity

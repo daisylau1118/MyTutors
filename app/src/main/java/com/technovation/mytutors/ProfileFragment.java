@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,12 +36,11 @@ public class ProfileFragment extends Fragment {
     private Button myHistory;
     private Button myRatings;
     private Button savedPeople;
-    private TextView userName;
-    private FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-    private DatabaseReference mDatabase;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private static final String TAG = "DocSnippets";
 
+    private TextView userName;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
+    private DocumentReference nameRef = db.collection("users").document(currentUser);
 
 
     public ProfileFragment() {
@@ -90,39 +91,30 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         userName = view.findViewById(R.id.userName);
+        nameRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            String first = documentSnapshot.getString("first_name");
+                            String last = documentSnapshot.getString("last_name");
+                            userName.setText(first + " "+ last);
 
-//        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                //get user name?? how
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//            }
-//        });
+                        }
+                        else{
+                            Toast.makeText(getContext(),"document does not exist",Toast.LENGTH_SHORT).show();
+                        }
 
-        DocumentReference docRef = db.collection("users").document("currentUser.getUid()");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        userName.setText( document.getData().toString());
-                    } else {
-                        Log.d(TAG, "No such document");
                     }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
-
-
-
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"failure to read document",Toast.LENGTH_SHORT).show();
+                    }
+                });
 
 
 

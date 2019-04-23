@@ -4,7 +4,6 @@
     <string-array name="users">
         <item>John Jones,pic1,5</item>
         <item>Emma Smith,pic2,4.5</item>
-        <item>Mia Lee,pic3,4.5</item>
         <item>Ben Joe,pic4,5</item>
         <item>Sarah Miller,pic5,4</item>
         <item>Chloe Cortez,pic6,5</item>
@@ -41,7 +40,7 @@
 
     <string-array name="savedPeople">
         <item>Emma Smith,pic2,4.5</item>
-        <item>Mia Lee,pic3,4.5</item>
+        <!--<item>Mia Lee,pic3,4.5</item>-->
         <item>Lily Owen,pic7,4</item>
         <item>Shanelle Hoffman,pic9,4</item>
         <item>Vivienne Corrigan,pic11,3.5</item>

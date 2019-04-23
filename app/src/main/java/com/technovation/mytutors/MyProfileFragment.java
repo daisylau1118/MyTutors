@@ -3,13 +3,21 @@ package com.technovation.mytutors;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 /**
@@ -20,10 +28,15 @@ public class MyProfileFragment extends Fragment {
     private FirebaseAuth mAuth;
     private Button edit;
     private Button logout;
+
+    private TextView userName;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
+    private DocumentReference nameRef = db.collection("users").document(currentUser);
+
     public MyProfileFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +62,31 @@ public class MyProfileFragment extends Fragment {
                 startActivity(new Intent(getContext(), LoginActivity.class));
             }
         });
+
+        userName = view.findViewById(R.id.userName);
+
+        nameRef.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()){
+                            String first = documentSnapshot.getString("first_name");
+                            String last = documentSnapshot.getString("last_name");
+                            userName.setText(first + " "+ last);
+
+                        }
+                        else{
+                            Toast.makeText(getContext(),"document does not exist",Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(),"failure to read document",Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         return view;
     }
