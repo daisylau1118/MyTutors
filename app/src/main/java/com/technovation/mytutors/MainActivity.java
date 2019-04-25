@@ -100,12 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.tutor_cb:
                     if (checked) {
-                        Map<String, Object> data = new HashMap<>();
-                        data.put("isTutor", true);
-                        db.collection("tutors").document(currentUser).set(data); // makes
+                        db.collection("users").document(currentUser).update("isTutor", true); // makes
                     } else
-                        db.collection("tutors").document(currentUser).update("isTutor", false);
-
+                        db.collection("users").document(currentUser).update("isTutor", false);
                 break;
             //subject
             case R.id.subject_cb_0: //math

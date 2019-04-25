@@ -65,6 +65,9 @@ public class UserPreferencesFragment extends Fragment {
     private CheckBox other6; // esl
     private CheckBox other7; // learning disability
 
+    private CheckBox tutor;
+    private CheckBox student;
+
 
     public UserPreferencesFragment() {
         // Required empty public constructor
@@ -105,11 +108,22 @@ public class UserPreferencesFragment extends Fragment {
         other6 = view.findViewById(R.id.other_cb_6);
         other7 = view.findViewById(R.id.other_cb_7);
 
+        tutor = view.findViewById(R.id.tutor_cb);
+        student = view.findViewById(R.id.student_cb);
+
         prefRef.get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if (documentSnapshot.exists()){
+
+                            if (documentSnapshot.getBoolean("tutor")!=null){
+                                Boolean isTutor = documentSnapshot.getBoolean("tutor");
+                                if (isTutor)
+                                    tutor.setChecked(true);
+                                else
+                                    student.setChecked(true);
+                            }
                             //subject
                             if (documentSnapshot.getBoolean("subject.math")!=null){
                                 Boolean math = documentSnapshot.getBoolean("subject.math");

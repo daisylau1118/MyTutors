@@ -54,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/label_title"
                 android:layout_marginTop="10dp"
-                android:text="Tutor" />
+                android:text="Tutor"
+                android:onClick="onCheckboxClicked"/>
 
             <CheckBox
                 android:id="@+id/student_cb"
