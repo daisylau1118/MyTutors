@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +39,8 @@ public class ProfileFragment extends Fragment {
     private Button savedPeople;
 
     private TextView userName;
+    private TextView status;
+    private RatingBar rating;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
     private DocumentReference nameRef = db.collection("users").document(currentUser);
@@ -93,14 +96,28 @@ public class ProfileFragment extends Fragment {
 
 
         userName = view.findViewById(R.id.userName);
+        status = view.findViewById(R.id.userstatus);
+        rating = view.findViewById(R.id.userRating);
+
         nameRef.get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if (documentSnapshot.exists()){
+                        if (documentSnapshot.exists()) {
                             String first = documentSnapshot.getString("first_name");
                             String last = documentSnapshot.getString("last_name");
-                            userName.setText(first + " "+ last);
+                            userName.setText(first + " " + last);
+
+                            boolean isTutor = documentSnapshot.getBoolean("isTutor");
+
+                            if (isTutor){ //user is tutor
+                                status.setText("Tutor");
+                                rating.setVisibility(View.VISIBLE);
+                            }
+
+                            else // user is student
+                                status.setText("Student");
+
 
                         }
                         else{

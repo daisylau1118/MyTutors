@@ -88,6 +88,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             Map<String, Object> data = new HashMap<>();
             data.put("first_name", firstName);
             data.put("last_name",lastName);
+            data.put("isTutor",false);
             db.collection("users").document(user.getUid().toString())
                     .set(data); // merge makes it so you dont overwrite data
 
