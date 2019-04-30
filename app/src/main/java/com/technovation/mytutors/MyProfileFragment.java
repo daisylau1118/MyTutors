@@ -61,8 +61,9 @@ public class MyProfileFragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signOut();
+
                 startActivity(new Intent(getContext(), LoginActivity.class));
+                mAuth.signOut();
             }
         });
 
