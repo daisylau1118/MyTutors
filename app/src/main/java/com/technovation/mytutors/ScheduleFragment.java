@@ -36,7 +36,7 @@ public class ScheduleFragment extends Fragment {
 
     private TextView date;
     private CalendarView calender;
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, MMM dd");
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, MMM d");
     private String selectedDate;
     private Date tempdate;
 
@@ -92,14 +92,16 @@ public class ScheduleFragment extends Fragment {
                 }
                 //changing date back to string in desired format
                 selectedDate = simpleDateFormat.format(tempdate);
-                date.setText(selectedDate);
+                date.setText(selectedDate.replaceAll("\\.", ""));
 
                 //changing the info under date to match selected date
-                if (selectedDate.equals("Mon, Apr 22")) //temp-- get booking info from database later
+                if (selectedDate.equals("Mon., May 6")) //temp-- get booking info from database later
                     dateInfo.setText("• 11:00am: Meet Emma at library");
-                else if ((selectedDate.equals("Fri, Apr 26")))
+                else if ((selectedDate.equals("Fri., May 10")))
                     dateInfo.setText("• 3:00pm: Meeting with John at cafe");
-                else if ((selectedDate.equals("Tue, Apr 30")))
+                else if ((selectedDate.equals("Tue., May 7")))
+                    dateInfo.setText("• 6:00pm: Tutoring with Jane");
+                else if ((selectedDate.equals("Sat., May 4")))
                     dateInfo.setText("• 6:00pm: Tutoring with Emma at school");
                 else
                     dateInfo.setText("• no events");

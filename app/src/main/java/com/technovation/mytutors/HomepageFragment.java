@@ -62,16 +62,6 @@ public class HomepageFragment extends Fragment implements OnCompleteListener<Que
                 .get()
                 .addOnCompleteListener(this);
 
-        /*
-        // changing fragment to settings if settings is clicked
-        settings= view.findViewById(R.id.settingsButton);
-        settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new SettingsFragment(), null).addToBackStack(null).commit();
-            }
-        });
-        */
 
         list = Arrays.asList(getResources().getStringArray(R.array.users));
         recyclerView = view.findViewById(R.id.recycler_view);

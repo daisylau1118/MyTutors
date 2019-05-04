@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/person"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="Time:"
                 android:textColor="@color/Black"
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="Person:"
                 android:textColor="@color/Black"
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/time"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:text="Date:"
                 android:textColor="@color/Black"
@@ -120,8 +120,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
-                android:layout_marginLeft="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="1dp"
                 android:scaleX=".75"
                 android:scaleY=".75" />
 
@@ -131,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pay_btn"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="220dp"
+                android:layout_marginStart="200dp"
                 android:background="@color/Grey"
                 android:text="Confirm" />
 
@@ -141,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="135dp"
                 android:text="Description:"
                 android:textColor="@color/Black"
@@ -152,9 +156,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/description"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
                 android:layout_marginLeft="28dp"
-                android:ems="12"
-                />
+                android:layout_marginEnd="53dp"
+                android:ems="12" />
 
             <ImageButton
                 android:id="@+id/pay_btn"
