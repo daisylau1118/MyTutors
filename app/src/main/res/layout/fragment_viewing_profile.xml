@@ -12,8 +12,8 @@
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:gravity="center|top"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,29 +33,24 @@
                     android:scaleX="1.2"
                     android:scaleY="1.2"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="15dp"
                     android:src="@drawable/tempprofilepic" />
 
 
-                <ImageView
-                    android:id="@+id/profileViewPic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars[4]"
-                    />
+
 
                 <TextView
                     android:id="@+id/profileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:layout_toRightOf="@id/profilePicture"
                     android:text="Emma Smith"
                     android:textColor="@color/Black"
-                    android:textSize="33sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/status"
@@ -75,13 +70,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/status"
-                    android:layout_marginLeft="-20dp"
+                    android:layout_marginLeft="-25dp"
                     android:layout_marginTop="-5dp"
 
                     android:layout_toRightOf="@id/profilePicture"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="4.5"
+                    android:stepSize=".2"
+                    android:rating="4.6"
                     android:scaleX="0.7"
                     android:scaleY="0.7" />
 
@@ -100,7 +96,7 @@
                     android:id="@+id/goToCalender"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="-10dp"
                     android:layout_toRightOf="@id/goToChat"
                     android:layout_below="@id/profileName"
@@ -123,15 +119,17 @@
                     android:id="@+id/bio_tb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:text="Works with: Math, Physics, Meeting in Public, Slow Learners"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@color/Black"
                     />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height ="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="5dp"
                     android:textColor="@color/Black"
                     android:text="Availability: Wednesdays, Fridays, Sundays"/>
                 <TextView
@@ -159,21 +157,22 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
 
                     <TextView
                         android:id="@+id/reviewText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Reviews:"
-                        android:textSize="30sp" />
+                        android:textSize="25sp" />
 
                     <ImageButton
                         android:id="@+id/ratingButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:layout_marginLeft="200dp"
+                        android:layout_marginLeft="186dp"
                         android:layout_toRightOf="@id/reviewText"
                         android:background="@color/Transparent"
                         android:scaleX="1.5"
@@ -206,19 +205,11 @@
                     android:scaleX="1"
                     android:scaleY="1"
                     android:layout_marginTop="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="15dp"
                     android:src="@drawable/tempprofilepic" />
 
-                <ImageView
-                    android:id="@+id/sampleProfilePicture"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:scaleX=".8"
-                    android:scaleY=".8"
-                    tools:srcCompat="@tools:sample/avatars[2]" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -244,15 +235,15 @@
                     android:id="@+id/showRating"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="-50dp"
+                    android:layout_marginLeft="-60dp"
                     android:layout_marginTop="-12dp"
                     android:layout_below="@id/ReviewerName"
                     android:layout_toRightOf="@+id/ReviewProfilePicture"
                     android:isIndicator="true"
                     android:numStars="5"
                     android:rating="5"
-                    android:scaleX="0.6"
-                    android:scaleY="0.6" />
+                    android:scaleX="0.5"
+                    android:scaleY="0.5" />
 
             </RelativeLayout>
 
@@ -264,7 +255,7 @@
                 android:layout_marginTop="-20dp"
                 android:layout_marginLeft="215dp"
                 android:text="See more ..."
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:background="@color/Transparent"
 
                 />
@@ -278,8 +269,8 @@
         android:id="@+id/goToPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="258dp"
         android:background="@color/Transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -289,8 +280,8 @@
         android:id="@+id/leave_review_tb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="70dp"
         android:text="Leave a review"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/goToPayment" />
