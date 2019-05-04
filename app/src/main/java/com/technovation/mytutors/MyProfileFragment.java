@@ -231,8 +231,8 @@ public class MyProfileFragment extends Fragment {
                                     days = sbdays.append("Sunday,  ").toString();
                             }
 
-                            availability.setText("Availability:   " + days.substring(0,days.length()-3));  //.substring... removes the extra comma at end
-                            preferences.setText("Preferences:   "+ pref.substring(0,pref.length()-3));
+                            availability.setText("Availability:\n" + days.substring(0,days.length()-3));  //.substring... removes the extra comma at end
+                            preferences.setText("Preferences:\n"+ pref.substring(0,pref.length()-3));
                             //END SETTING BIO
 
                         }
