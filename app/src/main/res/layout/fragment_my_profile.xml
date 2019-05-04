@@ -14,7 +14,7 @@
         android:background="@color/LightGrey"
         android:elevation="10dp"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
         android:text="My Profile"
         android:textAlignment="center"
         android:textColor="@color/Black"
@@ -102,20 +102,21 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/editBio"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:hint="Bio"
-        android:text="@string/user_bio"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userProfile"
-        />
+    <!--<EditText-->
+        <!--android:id="@+id/editBio"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="40dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginEnd="40dp"-->
+        <!--android:hint="Bio"-->
+        <!--android:text="@string/user_bio"-->
+        <!--android:inputType="text"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/userProfile"-->
+        <!--/>-->
+
 
     <Button
         android:id="@+id/edit_pref_btn"
@@ -123,14 +124,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
         android:background="@color/Grey"
         android:text="Edit Preferences"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBio" />
+        app:layout_constraintTop_toBottomOf="@+id/availability" />
 
     <Button
         android:id="@+id/logout_btn"
@@ -145,6 +146,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_pref_btn" />
+
+    <TextView
+        android:id="@+id/preferences"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Preferences: "
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userProfile"
+        />
+
+    <TextView
+        android:id="@+id/availability"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Availability: "
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/preferences"
+        />
+
 
     <!--<TextView-->
         android:id="@+id/textView2"

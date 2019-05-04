@@ -69,7 +69,7 @@
                 android:layout_toRightOf="@id/time"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="time" />
+                 />
 
             <TextView
                 android:id="@+id/time"
