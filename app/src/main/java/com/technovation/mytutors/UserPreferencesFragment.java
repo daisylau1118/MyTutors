@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -68,6 +69,8 @@ public class UserPreferencesFragment extends Fragment {
     private CheckBox tutor;
     private CheckBox student;
 
+    private Button confirm;
+
 
     public UserPreferencesFragment() {
         // Required empty public constructor
@@ -110,6 +113,14 @@ public class UserPreferencesFragment extends Fragment {
 
         tutor = view.findViewById(R.id.tutor_cb);
         student = view.findViewById(R.id.student_cb);
+
+        confirm = view.findViewById(R.id.confirm_btn);
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.FragmentContainer,new MyProfileFragment(), null).addToBackStack(null).commit();
+            }
+        });
 
         prefRef.get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -251,11 +262,6 @@ public class UserPreferencesFragment extends Fragment {
                                 if (learnDisb)
                                     other7.setChecked(true);
                             }
-
-
-
-
-
 
 
                         }

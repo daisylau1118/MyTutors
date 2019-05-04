@@ -100,9 +100,9 @@ public class ScheduleFragment extends Fragment {
                 else if ((selectedDate.equals("Fri., May 10")))
                     dateInfo.setText("• 3:00pm: Meeting with John at cafe");
                 else if ((selectedDate.equals("Tue., May 7")))
-                    dateInfo.setText("• 6:00pm: Tutoring with Jane");
-                else if ((selectedDate.equals("Sat., May 4")))
                     dateInfo.setText("• 6:00pm: Tutoring with Emma at school");
+                else if ((selectedDate.equals("Sat., May 4")))
+                    dateInfo.setText("• 6:00pm: Technovation :)");
                 else
                     dateInfo.setText("• no events");
 
