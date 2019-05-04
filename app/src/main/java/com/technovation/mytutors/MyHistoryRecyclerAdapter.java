@@ -47,6 +47,14 @@ public class MyHistoryRecyclerAdapter extends RecyclerView.Adapter<MyHistoryRecy
 
         viewHolder.textView.setText(name);
         viewHolder.ratingBar.setRating(rating);
+        if (name.equals("Emma Smith"))
+            viewHolder.imageView.setImageResource(R.mipmap.emma_round);
+        else if (name.equals("Cherie Akhtar"))
+            viewHolder.imageView.setImageResource(R.mipmap.cherie_round);
+        else if (name.equals("Mat Horton"))
+            viewHolder.imageView.setImageResource(R.mipmap.mat_round);
+        else if (name.equals("Shanelle Hoff"))
+            viewHolder.imageView.setImageResource(R.mipmap.shanelle_round);
 
 
     }

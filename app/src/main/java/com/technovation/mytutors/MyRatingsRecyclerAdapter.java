@@ -49,6 +49,17 @@ public class MyRatingsRecyclerAdapter extends RecyclerView.Adapter<MyRatingsRecy
         viewHolder.nameView.setText(name);
         viewHolder.review.setText(review);
         viewHolder.ratingBar.setRating(rating);
+
+        if (name.equals("Lori Brown"))
+            viewHolder.profilePicView.setImageResource(R.mipmap.lori_round);
+        else if (name.equals("Sarah Miller"))
+            viewHolder.profilePicView.setImageResource(R.mipmap.dog_round);
+        else if (name.equals("Cherie Akhtar"))
+            viewHolder.profilePicView.setImageResource(R.mipmap.cherie_round);
+        else if (name.equals("Mat Horton"))
+            viewHolder.profilePicView.setImageResource(R.mipmap.mat_round);
+        else if (name.equals("Shanelle Hoffman"))
+            viewHolder.profilePicView.setImageResource(R.mipmap.shanelle_round);
     }
 
     public static class myViewHolder extends RecyclerView.ViewHolder {

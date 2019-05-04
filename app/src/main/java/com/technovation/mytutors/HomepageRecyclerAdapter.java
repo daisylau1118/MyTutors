@@ -51,6 +51,17 @@ public class HomepageRecyclerAdapter extends RecyclerView.Adapter<HomepageRecycl
         viewHolder.textView.setText(name);
         viewHolder.ratingBar.setRating(rating);
 
+        if (name.equals("Emma Smith"))
+            viewHolder.imageView.setImageResource(R.mipmap.emma_round);
+        else if (name.equals("Mat Horton"))
+            viewHolder.imageView.setImageResource(R.mipmap.mat_round);
+        else if (name.equals("John Jones"))
+            viewHolder.imageView.setImageResource(R.mipmap.john_round);
+        else if (name.equals("Lily Owen"))
+            viewHolder.imageView.setImageResource(R.mipmap.lily_round);
+        else if (name.equals("Violet Jasmine"))
+            viewHolder.imageView.setImageResource(R.mipmap.violet_round);
+
     }
 
     public void setList(List<String> newList) {
